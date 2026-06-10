@@ -7,6 +7,42 @@ export const LOGO_URL =
 export const HERO_ILLUSTRATION =
   "https://customer-assets.emergentagent.com/job_flamboyant-neumann-7/artifacts/n36bsbk9_WOMEN.png";
 
+export const WELCOME_PICTURE =
+  "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85";
+
+export const ANNUAL_REPORT_URL =
+  "https://customer-assets.emergentagent.com/job_715e75ad-7048-46a3-b79e-56b4ed659619/artifacts/teqw20o8_Report%202025-26%20%281%29.pdf";
+
+export const REPORTS = [
+  {
+    year: "2025\u201326",
+    title: "Annual Report 2025\u201326",
+    description: "Rooted in Legacy. Moving Towards Scalable Impact.",
+    pages: "60+",
+    size: "52 MB",
+    url: ANNUAL_REPORT_URL,
+    available: true,
+  },
+  {
+    year: "2024\u201325",
+    title: "Annual Report 2024\u201325",
+    description: "Coming soon \u2014 to be uploaded.",
+    pages: "\u2014",
+    size: "\u2014",
+    url: "",
+    available: false,
+  },
+  {
+    year: "2023\u201324",
+    title: "Annual Report 2023\u201324",
+    description: "Coming soon \u2014 to be uploaded.",
+    pages: "\u2014",
+    size: "\u2014",
+    url: "",
+    available: false,
+  },
+];
+
 export const WELCOME_MESSAGE = {
   title: "A welcome message",
   paragraphs: [
@@ -503,6 +539,7 @@ export const NAV_SECTIONS = [
       { hash: "milestones", title: "Milestones", desc: "Timeline since 1940" },
       { hash: "ecosystem-legacy", title: "Ecosystem Legacy", desc: "Trusts, unions, cooperatives" },
       { hash: "ecosystem-current", title: "Current Ecosystem", desc: "Active organisations" },
+      { hash: "future", title: "Future Initiatives", desc: "Where we are going next" },
       { hash: "field", title: "From the Field", desc: "Photo gallery" },
     ],
   },

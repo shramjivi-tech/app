@@ -11,6 +11,9 @@ import {
   Copy,
   Check,
   Compass,
+  FileText,
+  Download,
+  Calendar,
 } from "lucide-react";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -20,7 +23,7 @@ import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import MultiplierChart from "../components/MultiplierChart";
 import Counter from "../components/Counter";
 import { toast } from "../hooks/use-toast";
-import { DONATION_PRESETS, SITE, FUTURE_SCOPE_DETAILED, QR_CODE_URL } from "../data/mock";
+import { DONATION_PRESETS, SITE, FUTURE_SCOPE_DETAILED, QR_CODE_URL, REPORTS } from "../data/mock";
 
 export default function GetInvolved() {
   const [amount, setAmount] = useState(2500);
@@ -283,6 +286,84 @@ export default function GetInvolved() {
           </div>
 
           {/* Funding Flow Chart */}
+        </div>
+      </section>
+
+      {/* Annual Reports */}
+      <section id="reports" className="py-20 md:py-24 scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <Reveal className="max-w-3xl mb-10">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">
+              <FileText className="w-3.5 h-3.5" /> Annual Reports
+            </div>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
+              Transparency, year by year.
+            </h2>
+            <p className="mt-4 text-[#3d4441] leading-relaxed text-[16px]">
+              Download our annual reports for a detailed look at programs, outcomes,
+              partnerships and finances. Past years will be uploaded here as they become
+              available.
+            </p>
+          </Reveal>
+
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" staggerChildren={0.1}>
+            {REPORTS.map((r) => (
+              <StaggerItem key={r.year}>
+                {r.available ? (
+                  <a
+                    href={r.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block bg-white rounded-2xl p-6 ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/40 hover:-translate-y-1 transition-all duration-300 h-full"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-[#ecf3e0] text-[#336d2a] flex items-center justify-center">
+                        <FileText className="w-5 h-5" />
+                      </div>
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#ea8a2e] text-white text-[10px] font-semibold uppercase tracking-wider">
+                        New
+                      </span>
+                    </div>
+                    <div className="mt-5 text-[10px] uppercase tracking-[0.22em] text-[#6e4a0a]">
+                      <Calendar className="w-3 h-3 inline mr-1 -mt-0.5" /> {r.year}
+                    </div>
+                    <h3 className="font-serif-display text-xl text-[#1a3812] mt-1 leading-tight">
+                      {r.title}
+                    </h3>
+                    <p className="mt-2 text-[13.5px] text-[#3d4441] leading-relaxed">{r.description}</p>
+                    <div className="mt-4 flex items-center gap-3 text-[11px] text-[#6d6357]">
+                      <span>{r.pages} pages</span>
+                      <span className="w-1 h-1 rounded-full bg-[#d8d2c2]" />
+                      <span>{r.size}</span>
+                    </div>
+                    <div className="mt-5 pt-4 border-t border-[#f0e8d3] inline-flex items-center gap-1.5 text-sm font-medium text-[#336d2a] group-hover:text-[#ea8a2e]">
+                      <Download className="w-4 h-4" /> Download PDF
+                    </div>
+                  </a>
+                ) : (
+                  <div className="bg-[#faf6ef] rounded-2xl p-6 ring-2 ring-dashed ring-[#d8d2c2] h-full flex flex-col">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-[#e7e1d4] text-[#a8a094] flex items-center justify-center">
+                      <FileText className="w-5 h-5" />
+                    </div>
+                    <div className="mt-5 text-[10px] uppercase tracking-[0.22em] text-[#a8a094]">
+                      <Calendar className="w-3 h-3 inline mr-1 -mt-0.5" /> {r.year}
+                    </div>
+                    <h3 className="font-serif-display text-xl text-[#6d6357] mt-1 leading-tight">
+                      {r.title}
+                    </h3>
+                    <p className="mt-2 text-[13.5px] text-[#6d6357] leading-relaxed">{r.description}</p>
+                    <div className="mt-auto pt-5 text-[12px] text-[#a8a094] italic">
+                      To be uploaded
+                    </div>
+                  </div>
+                )}
+              </StaggerItem>
+            ))}
+          </Stagger>
+
+          <Reveal className="mt-8 text-center text-[13px] text-[#6d6357]">
+            More annual reports will be added here as Shramjivi&rsquo;s archive is digitised.
+          </Reveal>
         </div>
       </section>
 
