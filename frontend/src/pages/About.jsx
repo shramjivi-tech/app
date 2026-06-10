@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Leaf, Layers, Network, MapPin, Landmark, Users2, Building2 } from "lucide-react";
+import { ArrowUpRight, Leaf, Layers, Network, MapPin, Landmark, Users2, Building2, Camera } from "lucide-react";
 import { motion } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import Timeline from "../components/Timeline";
-import { MILESTONES, SITE, GALLERY, ECOSYSTEM_LEGACY } from "../data/mock";
+import { MILESTONES, SITE, GALLERY, ECOSYSTEM_LEGACY, HISTORICAL_PHOTOS } from "../data/mock";
 
 const LEGACY_ICONS = [Landmark, Building2, Users2];
 
@@ -27,7 +27,7 @@ export default function About() {
       </section>
 
       {/* Long-form story */}
-      <section className="pb-20">
+      <section id="story" className="pb-20 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-5 md:px-8 space-y-6 text-[17px] text-[#2d3431] leading-[1.75]">
           <p>
             Founded by Late Shri Ishwarlal Gulabbhai Desai under the guidance of prominent
@@ -83,7 +83,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 md:py-28">
+      <section id="milestones" className="py-20 md:py-28 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="max-w-2xl mb-12">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Milestones</div>
@@ -96,7 +96,7 @@ export default function About() {
       </section>
 
       {/* Ecosystem Legacy - a story chapter */}
-      <section className="py-20 md:py-28 bg-[#f3ecdc]">
+      <section id="ecosystem-legacy" className="py-20 md:py-28 bg-[#f3ecdc] scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="max-w-3xl mb-12">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">
@@ -109,6 +109,45 @@ export default function About() {
               {ECOSYSTEM_LEGACY.intro}
             </p>
           </Reveal>
+
+          {/* Three B&W historical photo placeholders */}
+          <Stagger
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14"
+            staggerChildren={0.12}
+          >
+            {HISTORICAL_PHOTOS.map((p, i) => (
+              <StaggerItem key={i}>
+                <figure className="group relative rounded-2xl overflow-hidden ring-1 ring-[#d6c8a8] bg-[#1a1a1a] aspect-[4/5]">
+                  <img
+                    src={p.image}
+                    alt={p.caption}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                    style={{
+                      filter:
+                        "grayscale(100%) sepia(45%) contrast(1.08) brightness(0.92)",
+                    }}
+                  />
+                  {/* Vintage paper grain */}
+                  <div
+                    className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(rgba(120, 80, 40, 0.18) 1px, transparent 1.2px)",
+                      backgroundSize: "3px 3px",
+                    }}
+                  />
+                  {/* Top corner badge */}
+                  <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#faf6ef]/95 text-[10px] uppercase tracking-[0.22em] text-[#6e4a0a] font-medium">
+                    <Camera className="w-3 h-3" /> Archive 0{i + 1}
+                  </div>
+                  {/* Bottom caption */}
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 pt-12 text-[12px] text-[#f5e9d0] leading-snug font-medium">
+                    {p.caption}
+                  </figcaption>
+                </figure>
+              </StaggerItem>
+            ))}
+          </Stagger>
 
           {/* Story chapters */}
           <div className="space-y-6">
@@ -172,7 +211,7 @@ export default function About() {
       </section>
 
       {/* Ecosystem - Current */}
-      <section className="bg-[#1a3812] text-[#e8e2d3] py-20 md:py-28">
+      <section id="ecosystem-current" className="bg-[#1a3812] text-[#e8e2d3] py-20 md:py-28 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="max-w-2xl mb-12">
             <div className="text-xs uppercase tracking-[0.22em] text-[#ea8a2e] mb-3">The Shramjivi Ecosystem &mdash; Current</div>
@@ -199,7 +238,7 @@ export default function About() {
       </section>
 
       {/* Gallery strip */}
-      <section className="py-16">
+      <section id="field" className="py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="flex items-end justify-between mb-6">
             <h3 className="font-serif-display text-3xl text-[#1a3812]">From the field</h3>

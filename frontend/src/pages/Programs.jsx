@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ArrowUpRight, CheckCircle2, HeartPulse, Users, Scissors, BookOpen, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
@@ -48,12 +49,21 @@ const IMPACT_DATA = {
 
 export default function Programs() {
   const [active, setActive] = useState("health");
+  const location = useLocation();
+
+  useEffect(() => {
+    const id = (location.hash || "").replace("#", "");
+    if (["health", "women", "livelihood"].includes(id)) {
+      setActive(id);
+    }
+  }, [location.hash]);
+
   const current = FOCUS_AREAS.find((f) => f.id === active);
   const Icon = ICONS[current.icon];
 
   return (
     <div>
-      <section className="py-16 md:py-24">
+      <section id={active} className="py-16 md:py-24 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-3xl">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-4">Programs</div>
@@ -179,7 +189,7 @@ export default function Programs() {
       </section>
 
       {/* Legacy programs */}
-      <section className="bg-[#f3ecdc] py-20 md:py-28 mt-10">
+      <section id="legacy" className="bg-[#f3ecdc] py-20 md:py-28 mt-10 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="max-w-3xl mb-14">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">

@@ -44,7 +44,10 @@ function formatStandard(n) {
 export default function Counter({ value, duration = 1.6, className = "" }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.4 });
-  const { prefix, number, suffix, isIndian } = parseValue(value);
+  const parsed = parseValue(value);
+  const { prefix, number, suffix, isIndian } = parsed;
+  // If the original value has no digit at all, just render the value as-is.
+  const isPureText = typeof value === "string" && !/\d/.test(value);
   const mv = useMotionValue(0);
   const spring = useSpring(mv, {
     stiffness: 60,
@@ -62,6 +65,10 @@ export default function Counter({ value, duration = 1.6, className = "" }) {
     const unsub = spring.on("change", (v) => setDisplay(v));
     return () => unsub();
   }, [spring]);
+
+  if (isPureText) {
+    return <span ref={ref} className={className}>{value}</span>;
+  }
 
   const formatted = isIndian ? formatIndian(display) : formatStandard(display);
 

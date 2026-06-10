@@ -12,11 +12,27 @@ import GetInvolved from "./pages/GetInvolved";
 import Contact from "./pages/Contact";
 import { Toaster } from "./components/ui/toaster";
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [pathname]);
+    if (hash) {
+      // Wait a tick for the new page DOM to render, then scroll to target.
+      const id = hash.replace("#", "");
+      const tryScroll = (attempt = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          // Offset for sticky nav (~96px)
+          const top = el.getBoundingClientRect().top + window.scrollY - 96;
+          window.scrollTo({ top, behavior: "smooth" });
+        } else if (attempt < 8) {
+          setTimeout(() => tryScroll(attempt + 1), 80);
+        }
+      };
+      tryScroll();
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+  }, [pathname, hash]);
   return null;
 }
 
@@ -24,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <ScrollToTop />
+        <ScrollManager />
         <Navbar />
         <main>
           <Routes>

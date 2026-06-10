@@ -20,7 +20,7 @@ const HEADLINE_NUMBERS = [
 export default function Impact() {
   return (
     <div>
-      <section className="py-16 md:py-24">
+      <section id="numbers" className="py-16 md:py-24 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-3xl">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-4">Impact 2025–26</div>
@@ -51,7 +51,7 @@ export default function Impact() {
       </section>
 
       {/* Detailed grids */}
-      <section className="pb-16">
+      <section id="details" className="pb-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8 space-y-12">
           <ImpactBlock
             title="Health & Well-Being"
@@ -81,7 +81,7 @@ export default function Impact() {
       </section>
 
       {/* Awards & Recognition */}
-      <section className="py-20 md:py-28">
+      <section id="awards" className="py-20 md:py-28 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
             <div className="max-w-2xl">
@@ -124,25 +124,42 @@ export default function Impact() {
       </section>
 
       {/* Stories */}
-      <section className="bg-[#f3ecdc] py-20 md:py-28">
+      <section id="stories" className="bg-[#f3ecdc] py-20 md:py-28 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="max-w-2xl mb-12">
+          <Reveal className="max-w-2xl mb-12">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Stories of Impact</div>
             <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
               Behind every number is a name.
             </h2>
-          </div>
-          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerChildren={0.08}>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" staggerChildren={0.08}>
             {IMPACT_STORIES.map((s) => (
               <StaggerItem key={s.name}>
-                <article className="bg-white rounded-2xl p-7 ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
-                  <Quote className="w-7 h-7 text-[#ea8a2e]" />
-                  <div className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[#6e4a0a]">
-                    {s.program}
+                <article className="group bg-white rounded-2xl p-5 ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-500 h-full flex flex-col">
+                  <div className="flex items-start gap-4">
+                    <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden ring-2 ring-[#ecf3e0] shrink-0">
+                      <img
+                        src={s.image}
+                        alt={s.name}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[900ms]"
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-[10px] uppercase tracking-[0.18em] text-[#6e4a0a] font-medium">
+                        {s.program}
+                      </div>
+                      <h3 className="font-serif-display text-[19px] mt-1 text-[#1a3812] leading-tight">
+                        {s.title}
+                      </h3>
+                    </div>
                   </div>
-                  <h3 className="font-serif-display text-xl mt-2 text-[#1a3812]">{s.title}</h3>
-                  <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">{s.excerpt}</p>
-                  <div className="mt-5 text-sm text-[#6d6357]">&mdash; {s.name}</div>
+                  <Quote className="w-5 h-5 text-[#ea8a2e] mt-5" />
+                  <p className="mt-2 text-[14px] text-[#3d4441] leading-relaxed flex-1">
+                    {s.excerpt}
+                  </p>
+                  <div className="mt-4 pt-3 border-t border-[#f0e8d3] text-[13px] text-[#336d2a] font-medium">
+                    &mdash; {s.name}
+                  </div>
                 </article>
               </StaggerItem>
             ))}
@@ -151,7 +168,7 @@ export default function Impact() {
       </section>
 
       {/* Coverage map (visual list) */}
-      <section className="py-20">
+      <section id="coverage" className="py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Operational Footprint</div>

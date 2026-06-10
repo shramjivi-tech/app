@@ -52,7 +52,7 @@ export default function Contact() {
 
   return (
     <div>
-      <section className="py-16 md:py-24">
+      <section id="form" className="py-16 md:py-24 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="max-w-3xl">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-4">Contact</div>
@@ -139,7 +139,7 @@ export default function Contact() {
 
             {/* Info */}
             <aside className="lg:col-span-5 space-y-5">
-              <div className="bg-[#1a3812] text-[#e8e2d3] rounded-3xl p-7">
+              <div id="office" className="bg-[#1a3812] text-[#e8e2d3] rounded-3xl p-7 scroll-mt-24">
                 <div className="text-xs uppercase tracking-[0.22em] text-[#ea8a2e]">Head Office</div>
                 <div className="font-serif-display text-2xl text-white mt-1">Shramjivi Sevalaya</div>
                 <ul className="mt-5 space-y-4 text-[15px]">
@@ -168,7 +168,7 @@ export default function Contact() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-3xl p-7 ring-1 ring-[#e7e1d4]">
+              <div id="hours" className="bg-white rounded-3xl p-7 ring-1 ring-[#e7e1d4] scroll-mt-24">
                 <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Visiting hours</div>
                 <ul className="space-y-1.5 text-[15px] text-[#2d3431]">
                   <li className="flex justify-between"><span>Monday – Friday</span><span className="text-[#336d2a] font-medium">10:00 – 18:00</span></li>

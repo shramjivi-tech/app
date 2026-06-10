@@ -10,6 +10,7 @@ import {
   QrCode,
   Copy,
   Check,
+  Compass,
 } from "lucide-react";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -17,8 +18,9 @@ import { Textarea } from "../components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import MultiplierChart from "../components/MultiplierChart";
+import Counter from "../components/Counter";
 import { toast } from "../hooks/use-toast";
-import { DONATION_PRESETS, SITE, FUTURE_SCOPE, QR_CODE_URL } from "../data/mock";
+import { DONATION_PRESETS, SITE, FUTURE_SCOPE_DETAILED, QR_CODE_URL } from "../data/mock";
 
 export default function GetInvolved() {
   const [amount, setAmount] = useState(2500);
@@ -287,19 +289,79 @@ export default function GetInvolved() {
       {/* Future scope */}
       <section className="bg-[#f3ecdc] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="max-w-2xl mb-12">
-            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Future Initiatives</div>
+          <Reveal className="max-w-3xl mb-14">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">
+              <Compass className="w-3.5 h-3.5" /> Future Initiatives
+            </div>
             <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
               What your support unlocks next.
             </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {FUTURE_SCOPE.map((f) => (
-              <article key={f.title} className="bg-white rounded-2xl p-7 ring-1 ring-[#e7e1d4]">
-                <div className="text-[11px] uppercase tracking-[0.18em] text-[#6e4a0a]">{f.tag}</div>
-                <h3 className="font-serif-display text-2xl text-[#1a3812] mt-2">{f.title}</h3>
-                <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">{f.description}</p>
-              </article>
+            <p className="mt-5 text-[#3d4441] leading-relaxed text-[16px]">
+              Three new initiatives in active design &mdash; expanding our reach into digital
+              inclusion, child safety and HIV prevention. Each is grounded in the same model
+              that has worked for decades: existing infrastructure, peer leadership, and
+              partnership with government systems.
+            </p>
+          </Reveal>
+
+          <div className="space-y-12">
+            {FUTURE_SCOPE_DETAILED.map((p, idx) => (
+              <Reveal key={p.title}>
+                <article
+                  className={`bg-white rounded-3xl overflow-hidden ring-1 ring-[#e7e1d4] grid md:grid-cols-12 gap-0`}
+                >
+                  <div className={`relative md:col-span-5 ${idx % 2 === 1 ? "md:order-2" : ""}`}>
+                    <div className="relative h-64 md:h-full min-h-[340px] overflow-hidden">
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/55 via-transparent to-transparent" />
+                      <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#ea8a2e] text-white text-[11px] font-medium tracking-wide">
+                        {p.horizon}
+                      </div>
+                    </div>
+                  </div>
+                  <div className={`md:col-span-7 p-7 md:p-10 ${idx % 2 === 1 ? "md:order-1" : ""}`}>
+                    <div className="text-[11px] uppercase tracking-[0.22em] text-[#6e4a0a]">
+                      Initiative {idx + 1} &middot; {p.durationLine}
+                    </div>
+                    <h3 className="font-serif-display text-3xl md:text-[34px] text-[#1a3812] mt-2 leading-tight">
+                      {p.title}
+                    </h3>
+                    <div className="mt-1 text-[15px] text-[#336d2a] font-medium">{p.tagline}</div>
+                    <p className="mt-5 text-[15px] text-[#3d4441] leading-relaxed">{p.body}</p>
+
+                    <div className="mt-6">
+                      <div className="text-[11px] uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">
+                        Program design
+                      </div>
+                      <ul className="grid sm:grid-cols-2 gap-2">
+                        {p.curriculum.map((c) => (
+                          <li key={c} className="flex gap-2 text-[14px] text-[#2d3431]">
+                            <CheckCircle2 className="w-4 h-4 text-[#ea8a2e] shrink-0 mt-0.5" />
+                            <span>{c}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-6 grid grid-cols-3 gap-4 bg-[#faf6ef] rounded-2xl p-5 border border-[#f0e8d3]">
+                      {p.impact.map((it) => (
+                        <div key={it.label}>
+                          <div className="font-serif-display text-2xl md:text-[26px] text-[#336d2a] leading-tight">
+                            <Counter value={it.value} />
+                          </div>
+                          <div className="text-[11px] text-[#6d6357] mt-1 leading-snug">
+                            {it.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

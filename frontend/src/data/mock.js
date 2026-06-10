@@ -481,6 +481,166 @@ export const HERO_IMAGE =
   "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85";
 
 
+// Navigation dropdown sections — each item deep-links to a section on its page
+export const NAV_SECTIONS = [
+  {
+    label: "Home",
+    to: "/",
+    sections: [
+      { hash: "welcome", title: "Welcome", desc: "Message from the trustees" },
+      { hash: "mission", title: "Our Mission", desc: "What drives us" },
+      { hash: "focus", title: "Focus Areas", desc: "Three pillars of work" },
+      { hash: "testimonials", title: "Testimonials", desc: "From partners & community" },
+      { hash: "partners", title: "Collaborations", desc: "Government & public health partners" },
+      { hash: "stories", title: "Stories of Impact", desc: "Real transformations" },
+    ],
+  },
+  {
+    label: "About",
+    to: "/about",
+    sections: [
+      { hash: "story", title: "Our Story", desc: "Eight decades of presence" },
+      { hash: "milestones", title: "Milestones", desc: "Timeline since 1940" },
+      { hash: "ecosystem-legacy", title: "Ecosystem Legacy", desc: "Trusts, unions, cooperatives" },
+      { hash: "ecosystem-current", title: "Current Ecosystem", desc: "Active organisations" },
+      { hash: "field", title: "From the Field", desc: "Photo gallery" },
+    ],
+  },
+  {
+    label: "Programs",
+    to: "/programs",
+    sections: [
+      { hash: "health", title: "Health & Well-Being", desc: "HIV prevention" },
+      { hash: "women", title: "Women Empowerment", desc: "Counseling & legal aid" },
+      { hash: "livelihood", title: "Livelihood Skills", desc: "Sewing program" },
+      { hash: "legacy", title: "Legacy Programs", desc: "Past initiatives" },
+    ],
+  },
+  {
+    label: "Impact",
+    to: "/impact",
+    sections: [
+      { hash: "numbers", title: "Headline Numbers", desc: "2025\u201326 reach" },
+      { hash: "details", title: "Detailed Metrics", desc: "Program-wise" },
+      { hash: "awards", title: "Awards & Recognition", desc: "Recognised work" },
+      { hash: "stories", title: "Stories of Impact", desc: "Behind every number" },
+      { hash: "coverage", title: "Coverage Map", desc: "Where we work" },
+    ],
+  },
+  {
+    label: "Leadership",
+    to: "/leadership",
+    sections: [
+      { hash: "trustees", title: "Trustees", desc: "Governance" },
+      { hash: "project-management-and-monitoring", title: "Project Management", desc: "& Monitoring" },
+      { hash: "counseling-and-social-work", title: "Counseling Team", desc: "& Social Work" },
+      { hash: "field-outreach", title: "Field Outreach", desc: "On the ground" },
+      { hash: "administration-and-support", title: "Administration", desc: "& Support" },
+      { hash: "peer-educators", title: "Peer Educators", desc: "Community leaders" },
+      { hash: "testimonials", title: "Testimonials", desc: "Voices we serve" },
+    ],
+  },
+  {
+    label: "Contact",
+    to: "/contact",
+    sections: [
+      { hash: "form", title: "Send Message", desc: "Get in touch" },
+      { hash: "office", title: "Visit us", desc: "Shramjivi Sevalaya" },
+      { hash: "hours", title: "Visiting Hours", desc: "When we are open" },
+    ],
+  },
+];
+
+// Three B&W historical photo slots for the About page Ecosystem Legacy section
+export const HISTORICAL_PHOTOS = [
+  {
+    caption: "Founding decades \u2014 trade union movement, 1940s\u20131950s",
+    image:
+      "https://images.unsplash.com/photo-1582408921715-18e7806365c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwyfHxoaXN0b3JpY2FsJTIwSW5kaWFufGVufDB8fHx8MTc4MTA4MTIzM3ww&ixlib=rb-4.1.0&q=85",
+  },
+  {
+    caption: "Cooperative societies & welfare programmes, 1980s\u20131990s",
+    image:
+      "https://images.pexels.com/photos/15119089/pexels-photo-15119089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
+    caption: "Community outreach & women\u2019s empowerment, early 2000s",
+    image:
+      "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85",
+  },
+];
+
+// Detailed future scope (expanded version of FUTURE_SCOPE)
+export const FUTURE_SCOPE_DETAILED = [
+  {
+    title: "Digital Saheli",
+    tagline: "Bridging the digital divide for women",
+    horizon: "Pilot 2026 \u00b7 Scale 2027",
+    durationLine: "3-month community learning program",
+    image:
+      "https://images.unsplash.com/photo-1643199187247-b3b6009bf0bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxjb21wdXRlciUyMHRyYWluaW5nJTIwY2xhc3N8ZW58MHx8fHwxNzgxMDgxMjMzfDA&ixlib=rb-4.1.0&q=85",
+    body:
+      "A 3-month community learning programme training women in smartphone use, UPI, government portals and online safety \u2014 so each trained woman can become a peer resource in her neighbourhood.",
+    curriculum: [
+      "Smartphone fundamentals & WhatsApp safety",
+      "UPI payments, banking & online safety",
+      "DigiLocker, Umang & e-Shram portals",
+      "Job search, government scheme application",
+      "Online scams, password hygiene, privacy",
+    ],
+    impact: [
+      { value: "120", label: "Women per cohort (planned)" },
+      { value: "3", label: "Cohorts in Year 1" },
+      { value: "1:5", label: "Peer-multiplier ratio" },
+    ],
+  },
+  {
+    title: "Community Daycare & Child Safety",
+    tagline: "Safe spaces while parents earn",
+    horizon: "Planned 2026\u201327",
+    durationLine: "Onsite, year-round at Shramjivi Sevalaya",
+    image:
+      "https://images.pexels.com/photos/20556421/pexels-photo-20556421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    body:
+      "A safe, supervised environment for children of labour-class working parents \u2014 within Shramjivi Sevalaya \u2014 protecting against abuse, neglect and child labour while enabling dignified livelihoods for parents.",
+    curriculum: [
+      "Supervised daycare with trained caregivers",
+      "Pre-primary learning & creative play",
+      "Hygiene, nutrition & midday meals",
+      "\u201cGood Touch, Bad Touch\u201d awareness sessions",
+      "Health check-ups & referrals",
+    ],
+    impact: [
+      { value: "60+", label: "Children at any time" },
+      { value: "6 days", label: "a week" },
+      { value: "Onsite", label: "at Shramjivi Sevalaya" },
+    ],
+  },
+  {
+    title: "Two New FSW TI Projects",
+    tagline: "Expanding HIV prevention under NACP",
+    horizon: "2026\u201327 \u00b7 upon NACP approval",
+    durationLine: "Targeted Interventions for Female Sex Workers",
+    image:
+      "https://images.unsplash.com/photo-1648964388258-e71b58683ed0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxJbmRpYSUyMGhlYWx0aGNhcmV8ZW58MHx8fHwxNzgxMDIyOTM4fDA&ixlib=rb-4.1.0&q=85",
+    body:
+      "Two new Targeted Intervention projects focused on Female Sex Workers (FSW), coordinated from Shramjivi Sevalaya \u2014 scaling our HIV prevention footprint across South Gujarat with peer-educator-led outreach.",
+    curriculum: [
+      "Mapping & enumeration of HRG population",
+      "Peer educator recruitment & training",
+      "STI clinical services & free treatment",
+      "HIV testing, counselling & ART linkage",
+      "Crisis support, legal aid & advocacy",
+    ],
+    impact: [
+      { value: "2", label: "New TI projects" },
+      { value: "2,000+", label: "FSWs to be reached" },
+      { value: "NACP-V", label: "Aligned framework" },
+    ],
+  },
+];
+
+
 // Additional awards (extending AWARDS to 6 entries)
 AWARDS.push(
   {

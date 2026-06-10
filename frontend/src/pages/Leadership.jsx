@@ -32,7 +32,7 @@ export default function Leadership() {
           </Reveal>
 
           {/* Trustees */}
-          <div className="mt-14">
+          <div id="trustees" className="mt-14 scroll-mt-24">
             <Reveal>
               <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-5">Trustees</div>
             </Reveal>
@@ -59,8 +59,14 @@ export default function Leadership() {
 
           {/* Team Groups */}
           <div className="mt-20 space-y-14">
-            {TEAM_GROUPS.map((group) => (
-              <div key={group.label}>
+            {TEAM_GROUPS.map((group) => {
+              const groupId = group.label
+                .toLowerCase()
+                .replace(/&/g, "and")
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "");
+              return (
+              <div key={group.label} id={groupId} className="scroll-mt-24">
                 <Reveal>
                   <div className="flex items-end justify-between gap-4 mb-6">
                     <div>
@@ -111,13 +117,14 @@ export default function Leadership() {
                   ))}
                 </Stagger>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Testimonials Carousel */}
-      <section className="bg-[#f3ecdc] py-20 md:py-28">
+      <section id="testimonials" className="bg-[#f3ecdc] py-20 md:py-28 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="max-w-3xl mb-10">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Testimonials</div>
