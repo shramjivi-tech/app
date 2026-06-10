@@ -1,0 +1,179 @@
+import { Quote, TrendingUp, Users, HeartPulse, Scissors } from "lucide-react";
+import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
+import Counter from "../components/Counter";
+import {
+  HEALTH_IMPACT,
+  WOMEN_IMPACT,
+  LIVELIHOOD_IMPACT,
+  IMPACT_STORIES,
+  GALLERY,
+} from "../data/mock";
+
+const HEADLINE_NUMBERS = [
+  { value: "58,000+", label: "Lives impacted via HIV TI programs", icon: HeartPulse },
+  { value: "3,260+", label: "Women reached through counseling", icon: Users },
+  { value: "2,000+", label: "Women trained in livelihood skills", icon: Scissors },
+  { value: "242", label: "Health camps conducted in 2025–26", icon: TrendingUp },
+];
+
+export default function Impact() {
+  return (
+    <div>
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-3xl">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-4">Impact 2025–26</div>
+            <h1 className="font-serif-display text-5xl md:text-6xl lg:text-7xl text-[#1a3812] leading-[1.04]">
+              Numbers grounded in lives, trust and continuity.
+            </h1>
+            <p className="mt-6 text-lg text-[#3d4441] leading-relaxed">
+              Every metric on this page represents a person reached, a service delivered or a
+              moment of dignity restored.
+            </p>
+          </div>
+
+          {/* Headline numbers */}
+          <Stagger className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4" staggerChildren={0.1}>
+            {HEADLINE_NUMBERS.map((n) => (
+              <StaggerItem key={n.label}>
+                <div className="bg-white rounded-2xl p-7 ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
+                  <n.icon className="w-6 h-6 text-[#ea8a2e]" />
+                  <div className="font-serif-display text-5xl text-[#336d2a] mt-5">
+                    <Counter value={n.value} />
+                  </div>
+                  <div className="text-sm text-[#6d6357] mt-2 leading-snug">{n.label}</div>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Detailed grids */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 space-y-12">
+          <ImpactBlock
+            title="Health & Well-Being"
+            subtitle="Targeted Intervention — Migrant Program"
+            badge="56,150 migrants reached via IPC"
+            items={HEALTH_IMPACT.migrant}
+          />
+          <ImpactBlock
+            title="Health & Well-Being"
+            subtitle="Targeted Intervention — MSM Program"
+            badge="1,354+ active HRG population"
+            items={HEALTH_IMPACT.msm}
+          />
+          <ImpactBlock
+            title="Women Empowerment & Support"
+            subtitle="Counseling & Legal Support — Both Centers"
+            badge="3,260+ women reached in 2025–26"
+            items={WOMEN_IMPACT}
+          />
+          <ImpactBlock
+            title="Livelihood & Skill Development"
+            subtitle="Sewing Training Program"
+            badge="2,000+ enrolled since inception"
+            items={LIVELIHOOD_IMPACT}
+          />
+        </div>
+      </section>
+
+      {/* Stories */}
+      <section className="bg-[#f3ecdc] py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="max-w-2xl mb-12">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Stories of Impact</div>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
+              Behind every number is a name.
+            </h2>
+          </div>
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerChildren={0.08}>
+            {IMPACT_STORIES.map((s) => (
+              <StaggerItem key={s.name}>
+                <article className="bg-white rounded-2xl p-7 ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
+                  <Quote className="w-7 h-7 text-[#ea8a2e]" />
+                  <div className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[#6e4a0a]">
+                    {s.program}
+                  </div>
+                  <h3 className="font-serif-display text-xl mt-2 text-[#1a3812]">{s.title}</h3>
+                  <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">{s.excerpt}</p>
+                  <div className="mt-5 text-sm text-[#6d6357]">&mdash; {s.name}</div>
+                </article>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Coverage map (visual list) */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-5">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Operational Footprint</div>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
+              Where we work across Surat.
+            </h2>
+            <p className="mt-5 text-[#3d4441] leading-relaxed">
+              Migrant and high-risk populations often remain underserved due to mobility,
+              stigma and limited access. Our presence spans industrial zones and dense urban
+              neighbourhoods.
+            </p>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="flex flex-wrap gap-2">
+              {[
+                "Industrial Zones", "LH Road", "Sahara Darwaja", "Dumbhal", "Parvat",
+                "Kadodara", "Limbayat", "Godadara", "Pandesara", "Dindoli", "Udhana",
+                "Ganeshpura", "Kosad", "Amroli", "Ved Road", "Chhaprabhatha", "Katargam",
+                "Lal Darwaja", "Delhi Gate", "Mithi Khadi",
+              ].map((loc) => (
+                <span
+                  key={loc}
+                  className="px-4 py-2 rounded-full bg-white ring-1 ring-[#e7e1d4] text-sm text-[#1a3812] hover:bg-[#336d2a] hover:text-[#faf6ef] hover:ring-[#336d2a] transition-colors duration-200"
+                >
+                  {loc}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              {GALLERY.slice(0, 3).map((url, i) => (
+                <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-[#e7e1d4]">
+                  <img src={url} alt="Field" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function ImpactBlock({ title, subtitle, badge, items }) {
+  return (
+    <Reveal>
+      <div className="bg-white rounded-3xl p-7 md:p-10 ring-1 ring-[#e7e1d4]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-7">
+          <div>
+            <div className="text-xs uppercase tracking-[0.18em] text-[#6e4a0a]">{title}</div>
+            <h3 className="font-serif-display text-3xl text-[#1a3812] mt-1">{subtitle}</h3>
+          </div>
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#336d2a] text-[#faf6ef] text-xs font-medium">
+            {badge}
+          </span>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {items.map((it) => (
+            <div key={it.label}>
+              <div className="font-serif-display text-3xl text-[#336d2a]">
+                <Counter value={it.value} />
+              </div>
+              <div className="text-xs text-[#6d6357] mt-1 leading-snug">{it.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
