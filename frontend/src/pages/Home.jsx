@@ -78,15 +78,13 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Women illustration band — full width at bottom, visible on initial load */}
+        {/* Women illustration band — full width from left edge to right edge */}
         <div className="absolute inset-x-0 bottom-0 h-[42vh] md:h-[44vh] pointer-events-none z-0">
-          {/* Cream→green gradient strip to host the illustration */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1f4a16]/0 to-[#1a3812]" />
           <motion.img
             src={HERO_ILLUSTRATION}
             alt=""
             aria-hidden="true"
-            className="absolute inset-x-0 bottom-0 w-[110%] max-w-none left-1/2 -translate-x-1/2 object-cover object-bottom"
+            className="absolute inset-x-0 bottom-0 w-full max-w-none object-contain object-bottom"
             style={{ mixBlendMode: "screen" }}
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

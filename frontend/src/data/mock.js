@@ -567,15 +567,7 @@ export const NAV_SECTIONS = [
   {
     label: "Leadership",
     to: "/leadership",
-    sections: [
-      { hash: "trustees", title: "Trustees", desc: "Governance" },
-      { hash: "project-management-and-monitoring", title: "Project Management", desc: "& Monitoring" },
-      { hash: "counseling-and-social-work", title: "Counseling Team", desc: "& Social Work" },
-      { hash: "field-outreach", title: "Field Outreach", desc: "On the ground" },
-      { hash: "administration-and-support", title: "Administration", desc: "& Support" },
-      { hash: "peer-educators", title: "Peer Educators", desc: "Community leaders" },
-      { hash: "testimonials", title: "Testimonials", desc: "Voices we serve" },
-    ],
+    sections: [],
   },
   {
     label: "Contact",

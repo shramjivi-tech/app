@@ -66,11 +66,12 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center" onMouseLeave={scheduleClose}>
             {NAV_SECTIONS.map((item, idx) => {
               const isActive = location.pathname === item.to;
+              const hasSections = item.sections && item.sections.length > 0;
               return (
                 <div
                   key={item.to}
                   className="relative"
-                  onMouseEnter={() => openMenu(idx)}
+                  onMouseEnter={() => hasSections && openMenu(idx)}
                 >
                   <NavLink
                     to={item.to}
@@ -84,11 +85,13 @@ export default function Navbar() {
                     }
                   >
                     {item.label}
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                        openIdx === idx ? "rotate-180 text-[#ea8a2e]" : ""
-                      }`}
-                    />
+                    {hasSections && (
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                          openIdx === idx ? "rotate-180 text-[#ea8a2e]" : ""
+                        }`}
+                      />
+                    )}
                     {isActive && (
                       <span className="absolute -bottom-1 left-3 right-3 h-[2px] bg-[#ea8a2e] rounded-full" />
                     )}
@@ -148,6 +151,7 @@ export default function Navbar() {
           >
             <div className="px-5 py-4 space-y-1.5 max-h-[75vh] overflow-y-auto">
               {NAV_SECTIONS.map((item, idx) => {
+                const hasSections = item.sections && item.sections.length > 0;
                 const expanded = mobileExpanded === idx;
                 return (
                   <div key={item.to} className="border border-[#eee5d3] rounded-2xl overflow-hidden">
@@ -163,20 +167,22 @@ export default function Navbar() {
                       >
                         {item.label}
                       </NavLink>
-                      <button
-                        onClick={() => setMobileExpanded(expanded ? null : idx)}
-                        className="px-4 py-3"
-                        aria-label="Toggle sections"
-                      >
-                        <ChevronDown
-                          className={`w-4 h-4 text-[#6e4a0a] transition-transform duration-300 ${
-                            expanded ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
+                      {hasSections && (
+                        <button
+                          onClick={() => setMobileExpanded(expanded ? null : idx)}
+                          className="px-4 py-3"
+                          aria-label="Toggle sections"
+                        >
+                          <ChevronDown
+                            className={`w-4 h-4 text-[#6e4a0a] transition-transform duration-300 ${
+                              expanded ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      )}
                     </div>
                     <AnimatePresence>
-                      {expanded && (
+                      {expanded && hasSections && (
                         <motion.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
