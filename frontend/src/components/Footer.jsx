@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Instagram, Globe, Heart, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Instagram, Globe, Heart, ArrowUpRight, Phone } from "lucide-react";
 import { SITE, LOGO_URL } from "../data/mock";
 
 export default function Footer() {
@@ -61,6 +61,12 @@ export default function Footer() {
                 <Mail className="w-4 h-4 mt-1 text-[#ea8a2e] shrink-0" />
                 <a href={`mailto:${SITE.email}`} className="hover:text-white">
                   {SITE.email}
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <Phone className="w-4 h-4 mt-1 text-[#ea8a2e] shrink-0" />
+                <a href={`tel:${SITE.phoneRaw}`} className="hover:text-white">
+                  {SITE.phone}
                 </a>
               </li>
               <li className="flex gap-3">

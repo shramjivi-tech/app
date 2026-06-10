@@ -128,8 +128,12 @@ code {
 }
 
 /* Soft scrollbar for horizontal scrollers */
-.scroll-x::-webkit-scrollbar { height: 6px; }
-.scroll-x::-webkit-scrollbar-thumb { background: rgba(51, 109, 42, 0.25); border-radius: 999px; }
-.scroll-x::-webkit-scrollbar-track { background: transparent; }
+.scroll-x::-webkit-scrollbar { height: 8px; }
+.scroll-x::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #336d2a, #ea8a2e);
+  border-radius: 999px;
+}
+.scroll-x::-webkit-scrollbar-track { background: rgba(51, 109, 42, 0.08); border-radius: 999px; }
+.scroll-x { scrollbar-color: #ea8a2e rgba(51, 109, 42, 0.08); scrollbar-width: thin; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }

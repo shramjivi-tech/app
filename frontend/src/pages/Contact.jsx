@@ -99,7 +99,7 @@ export default function Contact() {
                   <Input
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder={"+91 \u2026"}
+                    placeholder={"+91 96387 44958"}
                     className="mt-2 h-12"
                   />
                 </div>
@@ -161,7 +161,9 @@ export default function Contact() {
                   </li>
                   <li className="flex gap-3">
                     <Phone className="w-5 h-5 text-[#ea8a2e] mt-0.5 shrink-0" />
-                    <span>Available on request via email</span>
+                    <a href={`tel:${SITE.phoneRaw}`} className="hover:text-white">
+                      {SITE.phone}
+                    </a>
                   </li>
                 </ul>
               </div>

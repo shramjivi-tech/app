@@ -51,7 +51,7 @@ function HorizontalTimeline({ items }) {
       >
         <div className="relative flex gap-6 min-w-max items-stretch">
           {/* Connector line */}
-          <div className="absolute left-0 right-0 top-[68px] h-px bg-[#d8d2c2]" />
+          <div className="absolute left-0 right-0 top-[68px] h-px bg-gradient-to-r from-[#336d2a]/40 via-[#ea8a2e]/40 to-[#336d2a]/40" />
           {items.map((it, idx) => (
             <TimelineCard key={it.year + idx} item={it} index={idx} />
           ))}

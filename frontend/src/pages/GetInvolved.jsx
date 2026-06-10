@@ -7,13 +7,18 @@ import {
   Building2,
   Sparkles,
   ArrowRight,
+  QrCode,
+  Copy,
+  Check,
 } from "lucide-react";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
+import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
+import FundingChart from "../components/FundingChart";
 import { toast } from "../hooks/use-toast";
-import { DONATION_PRESETS, SITE, FUTURE_SCOPE } from "../data/mock";
+import { DONATION_PRESETS, SITE, FUTURE_SCOPE, QR_CODE_URL } from "../data/mock";
 
 export default function GetInvolved() {
   const [amount, setAmount] = useState(2500);
@@ -171,7 +176,7 @@ export default function GetInvolved() {
                 <div className="mt-7 grid md:grid-cols-2 gap-4">
                   <Field label="Full Name *" value={donor.name} onChange={(v) => setDonor({ ...donor, name: v })} placeholder="Your full name" />
                   <Field label="Email *" type="email" value={donor.email} onChange={(v) => setDonor({ ...donor, email: v })} placeholder="you@example.com" />
-                  <Field label="Phone" value={donor.phone} onChange={(v) => setDonor({ ...donor, phone: v })} placeholder={"+91 \u2026"} />
+                  <Field label="Phone" value={donor.phone} onChange={(v) => setDonor({ ...donor, phone: v })} placeholder={"+91 96387 44958"} />
                   <Field label="PAN (for 80G receipt)" value={donor.pan} onChange={(v) => setDonor({ ...donor, pan: v.toUpperCase() })} placeholder="ABCDE1234F" />
                 </div>
 
@@ -202,6 +207,41 @@ export default function GetInvolved() {
             </div>
 
             <aside className="lg:col-span-5 space-y-5">
+              {/* QR Code */}
+              <div className="bg-white rounded-3xl p-7 ring-1 ring-[#e7e1d4]">
+                <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 flex items-center gap-2">
+                  <QrCode className="w-3.5 h-3.5" /> Scan to pay via UPI
+                </div>
+                <div className="font-serif-display text-2xl text-[#1a3812] mb-4">
+                  Pay instantly using any UPI app
+                </div>
+                <div className="flex items-start gap-5 flex-col sm:flex-row">
+                  <div className="relative">
+                    <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[#336d2a]/15 to-[#ea8a2e]/15 blur" />
+                    <div className="relative w-44 h-44 bg-white rounded-2xl border border-[#e7e1d4] p-2 flex items-center justify-center">
+                      <img
+                        src={QR_CODE_URL}
+                        alt="Shramjivi UPI QR Code"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="absolute -top-2 -right-2 px-2 py-1 rounded-full bg-[#ea8a2e] text-white text-[10px] font-semibold">
+                      UPI
+                    </div>
+                  </div>
+                  <div className="flex-1 text-sm text-[#3d4441] space-y-2">
+                    <p className="leading-relaxed">
+                      Open any UPI app (GPay, PhonePe, Paytm, BHIM) &mdash; scan and pay
+                      directly to:
+                    </p>
+                    <CopyableValue label="UPI ID" value={SITE.bank.upi} />
+                    <p className="text-xs text-[#6d6357]">
+                      For 80G receipt, please share your PAN via the form.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div className="bg-[#1a3812] text-[#e8e2d3] rounded-3xl p-7">
                 <div className="text-xs uppercase tracking-[0.22em] text-[#ea8a2e] mb-3">Bank Transfer</div>
                 <div className="font-serif-display text-2xl text-white mb-4">Direct contribution</div>
@@ -232,6 +272,13 @@ export default function GetInvolved() {
                 </ul>
               </div>
             </aside>
+          </div>
+
+          {/* Funding Flow Chart */}
+          <div className="mt-16">
+            <Reveal>
+              <FundingChart />
+            </Reveal>
           </div>
         </div>
       </section>
@@ -271,6 +318,30 @@ function Field({ label, value, onChange, type = "text", placeholder }) {
         placeholder={placeholder}
         className="mt-2 h-12"
       />
+    </div>
+  );
+}
+
+function CopyableValue({ label, value }) {
+  const [copied, setCopied] = useState(false);
+  function copy() {
+    navigator.clipboard?.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1800);
+  }
+  return (
+    <div className="flex items-center gap-2 bg-[#faf6ef] border border-[#e7e1d4] rounded-lg px-3 py-2">
+      <span className="text-xs uppercase tracking-[0.18em] text-[#6e4a0a]">{label}</span>
+      <span className="font-medium text-[#1a3812] text-sm truncate">{value}</span>
+      <button
+        type="button"
+        onClick={copy}
+        className="ml-auto inline-flex items-center gap-1 px-2 py-1 rounded-md hover:bg-[#ecf3e0] text-[#336d2a] text-xs"
+        aria-label="Copy UPI ID"
+      >
+        {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+        {copied ? "Copied" : "Copy"}
+      </button>
     </div>
   );
 }

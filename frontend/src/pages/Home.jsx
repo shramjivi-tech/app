@@ -218,18 +218,28 @@ export default function Home() {
           <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerChildren={0.1}>
             {IMPACT_STORIES.slice(0, 3).map((s) => (
               <StaggerItem key={s.name}>
-                <article className="bg-white rounded-2xl p-7 ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
-                  <Quote className="w-7 h-7 text-[#ea8a2e]" />
-                  <div className="mt-3 text-[11px] uppercase tracking-[0.18em] text-[#6e4a0a]">
-                    {s.program}
+                <article className="group bg-white rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full flex flex-col">
+                  <div className="relative h-52 overflow-hidden">
+                    <img
+                      src={s.image}
+                      alt={s.name}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/45 via-transparent to-transparent" />
+                    <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 text-[10px] uppercase tracking-[0.18em] text-[#6e4a0a] font-medium">
+                      {s.program}
+                    </div>
                   </div>
-                  <h3 className="font-serif-display text-xl mt-2 text-[#1a3812]">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">
-                    {s.excerpt}
-                  </p>
-                  <div className="mt-5 text-sm text-[#6d6357]">&mdash; {s.name}</div>
+                  <div className="p-7 flex-1 flex flex-col">
+                    <Quote className="w-6 h-6 text-[#ea8a2e]" />
+                    <h3 className="font-serif-display text-xl mt-3 text-[#1a3812]">
+                      {s.title}
+                    </h3>
+                    <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">
+                      {s.excerpt}
+                    </p>
+                    <div className="mt-5 pt-4 border-t border-[#f0e8d3] text-sm text-[#336d2a] font-medium">&mdash; {s.name}</div>
+                  </div>
                 </article>
               </StaggerItem>
             ))}
@@ -239,36 +249,71 @@ export default function Home() {
 
       {/* Testimonial */}
       <section className="py-20 md:py-28">
-        <Reveal className="max-w-5xl mx-auto px-5 md:px-8 text-center">
-          <Quote className="w-10 h-10 text-[#ea8a2e] mx-auto" />
-          <p className="mt-6 font-serif-display text-3xl md:text-4xl lg:text-[42px] text-[#1a3812] leading-[1.2] text-balance">
-            &ldquo;{TESTIMONIALS[0].quote}&rdquo;
-          </p>
-          <div className="mt-8">
-            <div className="font-medium text-[#336d2a]">{TESTIMONIALS[0].name}</div>
-            <div className="text-sm text-[#6d6357]">{TESTIMONIALS[0].title}</div>
-          </div>
-        </Reveal>
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <Reveal className="max-w-2xl mb-12">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">In their words</div>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
+              From partners and the people we serve.
+            </h2>
+          </Reveal>
+          <Stagger className="grid md:grid-cols-2 gap-6" staggerChildren={0.1}>
+            {TESTIMONIALS.slice(0, 2).map((t) => (
+              <StaggerItem key={t.name}>
+                <article className="bg-white rounded-3xl p-7 md:p-8 ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
+                  <Quote className="w-8 h-8 text-[#ea8a2e]" />
+                  <p className="mt-4 text-[17px] md:text-[18px] text-[#2d3431] leading-relaxed">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="mt-6 flex items-center gap-4 pt-5 border-t border-[#f0e8d3]">
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-14 h-14 rounded-full object-cover ring-2 ring-[#ecf3e0]"
+                    />
+                    <div>
+                      <div className="font-medium text-[#336d2a]">{t.name}</div>
+                      <div className="text-sm text-[#6d6357]">{t.title}</div>
+                    </div>
+                  </div>
+                </article>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
       </section>
 
-      {/* Partners marquee */}
-      <section className="py-12 border-y border-[#e7e1d4] bg-[#faf6ef] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 mb-6">
-          <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a]">
-            In collaboration with
-          </div>
-        </div>
-        <div className="ticker-fade">
-          <div className="flex gap-12 marquee-track whitespace-nowrap">
-            {[...PARTNERS, ...PARTNERS].map((p, i) => (
-              <div
-                key={i}
-                className="font-serif-display text-2xl md:text-3xl text-[#336d2a]/70"
-              >
-                {p}
-              </div>
+      {/* Partners / Collaborations */}
+      <section className="py-16 md:py-20 border-y border-[#e7e1d4] bg-[#faf6ef]">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <Reveal className="text-center mb-10">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">
+              In collaboration with
+            </div>
+            <h2 className="font-serif-display text-3xl md:text-4xl text-[#1a3812]">
+              Trusted by government, public health and community partners.
+            </h2>
+          </Reveal>
+          <Stagger
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+            staggerChildren={0.06}
+          >
+            {PARTNERS.map((p) => (
+              <StaggerItem key={p.name}>
+                <div className="group bg-white rounded-2xl p-5 ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col items-start gap-3">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center font-serif-display text-white text-lg shadow-sm shrink-0"
+                    style={{ backgroundColor: p.color }}
+                    aria-hidden
+                  >
+                    {p.short.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                  </div>
+                  <div className="text-sm font-medium text-[#1a3812] leading-snug">
+                    {p.name}
+                  </div>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 

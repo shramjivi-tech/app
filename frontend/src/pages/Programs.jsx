@@ -190,14 +190,24 @@ export default function Programs() {
           <Stagger className="grid md:grid-cols-3 gap-6" staggerChildren={0.1}>
             {LEGACY_PROGRAMS.map((p) => (
               <StaggerItem key={p.title}>
-                <article className="bg-white rounded-2xl p-7 ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
-                  <BookOpen className="w-6 h-6 text-[#ea8a2e]" />
-                  <div className="text-xs uppercase tracking-[0.18em] text-[#6e4a0a] mt-4">
-                    {p.period}
+                <article className="bg-white rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full flex flex-col">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/40 to-transparent" />
+                    <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 text-[10px] uppercase tracking-[0.18em] text-[#6e4a0a] font-medium">
+                      {p.period}
+                    </div>
                   </div>
-                  <h3 className="font-serif-display text-2xl text-[#1a3812] mt-2">{p.title}</h3>
-                  <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">{p.body}</p>
-                  <div className="mt-5 text-sm font-medium text-[#336d2a]">{p.highlight}</div>
+                  <div className="p-7 flex-1 flex flex-col">
+                    <BookOpen className="w-6 h-6 text-[#ea8a2e]" />
+                    <h3 className="font-serif-display text-2xl text-[#1a3812] mt-3">{p.title}</h3>
+                    <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">{p.body}</p>
+                    <div className="mt-auto pt-5 text-sm font-medium text-[#336d2a]">{p.highlight}</div>
+                  </div>
                 </article>
               </StaggerItem>
             ))}
