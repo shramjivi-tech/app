@@ -4,6 +4,23 @@
 export const LOGO_URL =
   "https://customer-assets.emergentagent.com/job_flamboyant-neumann-7/artifacts/e4rg8y82_final%20shramjivi%20logo.png";
 
+export const HERO_ILLUSTRATION =
+  "https://customer-assets.emergentagent.com/job_flamboyant-neumann-7/artifacts/n36bsbk9_WOMEN.png";
+
+export const WELCOME_MESSAGE = {
+  title: "A welcome message",
+  paragraphs: [
+    "For decades, Shramjivi has been deeply rooted in community service \u2014 working consistently to support women, workers, and vulnerable groups through government programs and institutional support.",
+    "Over the years, our work has grown steadily across health, counseling, awareness, and livelihood initiatives, reaching communities through trusted and consistent engagement. Our approach has always been grounded \u2014 working within existing systems, responding to real needs, and building long-term trust.",
+    "This continuity has been our strength. As we reflect on this journey, we also recognize that the needs of communities are evolving \u2014 and so must our approach. We are now entering a new phase focused on expanding our reach, strengthening our systems, and adopting more structured and modern approaches to increase our impact.",
+    "This is a moment of transition \u2014 from sustained service to scalable impact. We extend our sincere gratitude to all those who have been part of this journey, and we look forward to building the next chapter together.",
+  ],
+  signatories: [
+    { name: "Mamta Desai", role: "Trustee & President" },
+    { name: "Yuti R. Desai", role: "Trustee \u2014 Strategic Initiatives" },
+  ],
+};
+
 export const SITE = {
   name: "Shramjivi",
   fullName: "Shramjivi Mahila Kalyan Trust",
@@ -462,3 +479,167 @@ export const GALLERY = [
 
 export const HERO_IMAGE =
   "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85";
+
+
+// Additional awards (extending AWARDS to 6 entries)
+AWARDS.push(
+  {
+    title: "ICMR-NITVAR Field Partner",
+    year: "2024",
+    body:
+      "Acknowledged as a local venue and community support partner for the ICMR-NITVAR IBBS-HRG project in Surat.",
+    image:
+      "https://images.unsplash.com/photo-1773212902273-278c261a4c98?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHw0fHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+  },
+  {
+    title: "Child Labour Rehabilitation",
+    year: "2021",
+    body:
+      "Honoured by Surat Labour Department for successful implementation of the National Child Labour Program across seven schools.",
+    image:
+      "https://images.unsplash.com/photo-1764874299025-d8b2251f307d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+  },
+  {
+    title: "Decades of Service Felicitation",
+    year: "2020",
+    body:
+      "Recognised for 80 years of uninterrupted service across labour rights, women empowerment and community welfare in South Gujarat.",
+    image:
+      "https://images.unsplash.com/photo-1764408721535-2dcb912db83e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+  }
+);
+
+// Historical ecosystem (Legacy) -- told as story chapters
+export const ECOSYSTEM_LEGACY = {
+  intro:
+    "Before the present-day initiatives existed, Shramjivi had already grown into a sprawling movement \u2014 a constellation of trusts, unions and cooperatives that touched almost every aspect of working-class life in South Gujarat.",
+  groups: [
+    {
+      label: "Associated Trusts & Institutions",
+      items: [
+        "Shramjivi Mahamandal Sangh",
+        "Ishwarlal Desai Shramjivi Kalyan Trust",
+        "Harihar Thakor Smarak Trust",
+        "Dinubhai Desai Labour Welfare Trust",
+        "Indian Working Class Conference Charity Trust",
+        "Institute for Workers Medical Health & Safety Trust",
+        "Institute for Information Technology Trust",
+        "Shramjivi Mahila Kalyan Trust",
+        "Jigar Bal Kalyan Trust",
+        "D. A. Desai Legal Research Foundation",
+        "Majur Kalyan Trust, Navsari",
+        "Majur Kalyan Trust, Bilimora",
+        "Bonus Fund Kamdar Kalyan Nidhi",
+      ],
+    },
+    {
+      label: "Associated Cooperative Societies",
+      items: [
+        "Surat Resham Mill Kamdar Sahakari Shramapalni Mandali Ltd.",
+        "Bandhkam Karnari Sahakari Mandali Ltd.",
+        "Kamwala Garden Shramjivi Co-operative Housing Society Ltd.",
+        "Shramjivi Sahakari Ghar Bandhnari Mandali No. 2 & 3",
+        "Shramjivi Sahakari Mudranalay Ltd.",
+        "Morarji Desai Textile Labour Co-operative Industries Ltd.",
+        "Shramjivi Mahila Audhyogik Seva Sahakari Mandali Ltd.",
+        "Yarn Industrial Co-operative Society Ltd.",
+        "Surat Diamond Workers Industrial Co-operative Society Ltd.",
+      ],
+    },
+    {
+      label: "Associated Unions & Worker Organizations",
+      items: [
+        "The Surat Textile Labour Union",
+        "The Surat Silk Mills Labour Union",
+        "The State Transport Workers Union",
+        "The Dakshin Gujarat Press Kamdar Union",
+        "The Dyeing, Bleaching & Finishing Workers Union",
+        "The Surat District Engineering & Janta Workers Union",
+        "Gujarat Electricity Board Employees Union",
+        "Gujarat Shramik Hakk Sangathan",
+        "South Gujarat Diamond Workers Association",
+        "Shramjivi Mahila Kalyan Sangh",
+        "Majur Mahajan Mandal, Navsari",
+        "Majur Mahajan Sangh, Bilimora",
+        "Surat Majur Sabha",
+      ],
+    },
+  ],
+  outro:
+    "Despite limited archival records, the institution\u2019s long-standing presence, community recognition, and sustained field engagement reflect a deep and meaningful legacy that has influenced countless lives across generations \u2014 including a memorable visit by Late Shri Morarji Desai, former Prime Minister of India.",
+};
+
+// Expanded Legacy Programs with full report content
+export const LEGACY_PROGRAMS_FULL = [
+  {
+    title: "Computer Training Program",
+    period: "2008 \u2014 2018",
+    underTrust: "Institute for Information Technology Trust",
+    overview:
+      "Shramjivi previously implemented a Computer Training Program aimed at improving digital literacy and employability among youth and community members. Conducted from 2008 to 2018, the program offered short-term courses of 2 to 3 months at highly subsidized fees, ensuring accessibility for individuals from diverse socio-economic backgrounds.",
+    curriculum: [
+      "Windows fundamentals",
+      "Microsoft Word, Excel, PowerPoint",
+      "Tally Accounting",
+      "CorelDRAW & PageMaker",
+      "Photoshop & DTP",
+    ],
+    impact: [
+      { value: "512", label: "students trained" },
+      { value: "10 yrs", label: "of operation" },
+      { value: "Women-focused", label: "primary beneficiaries" },
+    ],
+    pullquote:
+      "A total of 512 students were trained across various courses, with a strong focus on empowering women through digital skill development.",
+    image:
+      "https://images.unsplash.com/photo-1643199187247-b3b6009bf0bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxjb21wdXRlciUyMHRyYWluaW5nJTIwY2xhc3N8ZW58MHx8fHwxNzgxMDgxMjMzfDA&ixlib=rb-4.1.0&q=85",
+  },
+  {
+    title: "National Child Labour Program",
+    period: "2006\u20132009 & 2017\u20132021",
+    underTrust: "Jigar Bal Kalyan Trust \u00b7 with Surat Labour Department",
+    overview:
+      "Implemented in two phases \u2014 initially from 2006 to 2009 across three schools, and later from 2017 to 2021, during which six schools were entrusted to the organization. Owing to the quality and impact of the work, one additional school was allocated, bringing the total to seven schools. The initiative supported children from labour backgrounds aged 14 to 18, preparing them for mainstream education.",
+    curriculum: [
+      "Identification and enrollment through community surveys",
+      "Structured academic support aligned with Nagar Prathmik School curriculum",
+      "Uniforms, books and learning materials",
+      "Midday meals via Akshay Patra & Madhyan Bhojan Yojana",
+      "Financial stipends transferred to students\u2019 bank accounts",
+      "Seasonal support during school vacations",
+      "\u201cGood Touch, Bad Touch\u201d awareness with Surat Police",
+    ],
+    impact: [
+      { value: "7", label: "schools across Kosad, Shriram Nagar, Patidar, Chhaprabhatha" },
+      { value: "280+", label: "children enrolled" },
+      { value: "260+", label: "mainstreamed into formal education" },
+    ],
+    pullquote:
+      "A significant milestone in Shramjivi\u2019s journey, reflecting long-standing commitment to education, rehabilitation, and the empowerment of vulnerable children.",
+    image:
+      "https://images.pexels.com/photos/20556421/pexels-photo-20556421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+  {
+    title: "Street Children Outreach & HIV Awareness",
+    period: "2001 onwards (3-year intensive phase)",
+    underTrust: "Shramjivi Mahila Kalyan Trust",
+    overview:
+      "A program focused on supporting vulnerable children living in high-risk urban environments \u2014 street-connected children found across railway and bus stations, footpaths, temples, markets and other public spaces in Surat. Many were exposed to unsafe conditions, exploitation and health risks. The program created awareness around HIV/AIDS, promoted safe practices, and provided access to essential health and support services.",
+    curriculum: [
+      "Field outreach across railway stations, footpaths, temples, markets",
+      "Day-care centers with hygiene, nutrition and primary education",
+      "Regular health check-ups & free treatment via municipal linkages",
+      "Training of peer educators within the community",
+      "Rehabilitation through partner shelter homes & schools",
+    ],
+    impact: [
+      { value: "2,900+", label: "street children reached" },
+      { value: "3 yrs", label: "intensive outreach phase" },
+      { value: "Multi-site", label: "across Surat" },
+    ],
+    pullquote:
+      "Reaching street-connected children with awareness, counseling and basic healthcare support \u2014 part of Shramjivi\u2019s commitment to vulnerable children at the grassroots.",
+    image:
+      "https://images.pexels.com/photos/15119089/pexels-photo-15119089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  },
+];

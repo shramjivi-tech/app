@@ -1,4 +1,4 @@
-import { Quote, TrendingUp, Users, HeartPulse, Scissors, Award, Plus } from "lucide-react";
+import { Quote, TrendingUp, Users, HeartPulse, Scissors, Award } from "lucide-react";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import Counter from "../components/Counter";
 import {
@@ -93,21 +93,21 @@ export default function Impact() {
               </h2>
             </div>
             <p className="text-sm text-[#6d6357] max-w-xs">
-              A growing wall of moments that honour 85+ years of service. More to be added soon.
+              A growing wall of moments that honour 85+ years of consistent service.
             </p>
           </Reveal>
 
           <Stagger className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerChildren={0.1}>
             {AWARDS.map((a) => (
               <StaggerItem key={a.title}>
-                <article className="group bg-white rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <article className="group bg-white rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
                   <div className="relative h-56 overflow-hidden">
                     <img
                       src={a.image}
                       alt={a.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1100ms]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/60 via-[#1a3812]/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/65 via-[#1a3812]/10 to-transparent" />
                     <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#ea8a2e] text-white text-[11px] font-medium">
                       <Award className="w-3 h-3" /> {a.year}
                     </div>
@@ -119,20 +119,6 @@ export default function Impact() {
                 </article>
               </StaggerItem>
             ))}
-            {/* Placeholder for more awards */}
-            <StaggerItem>
-              <div className="rounded-2xl border-2 border-dashed border-[#d8d2c2] bg-[#faf6ef] h-full min-h-[330px] flex flex-col items-center justify-center text-center p-8 hover:border-[#336d2a]/40 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-white border border-[#ea8a2e]/40 flex items-center justify-center">
-                  <Plus className="w-5 h-5 text-[#ea8a2e]" />
-                </div>
-                <div className="mt-4 font-serif-display text-lg text-[#1a3812]">
-                  More recognitions coming
-                </div>
-                <p className="text-xs text-[#6d6357] mt-1 max-w-[220px]">
-                  Press features, certificates and ceremonies will be added here.
-                </p>
-              </div>
-            </StaggerItem>
           </Stagger>
         </div>
       </section>

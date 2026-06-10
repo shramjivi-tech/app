@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Leaf, Layers, Network, MapPin } from "lucide-react";
+import { ArrowUpRight, Leaf, Layers, Network, MapPin, Landmark, Users2, Building2 } from "lucide-react";
+import { motion } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import Timeline from "../components/Timeline";
-import { MILESTONES, SITE, GALLERY } from "../data/mock";
+import { MILESTONES, SITE, GALLERY, ECOSYSTEM_LEGACY } from "../data/mock";
+
+const LEGACY_ICONS = [Landmark, Building2, Users2];
 
 export default function About() {
   return (
@@ -92,15 +95,91 @@ export default function About() {
         </div>
       </section>
 
-      {/* Ecosystem */}
+      {/* Ecosystem Legacy - a story chapter */}
+      <section className="py-20 md:py-28 bg-[#f3ecdc]">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <Reveal className="max-w-3xl mb-12">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">
+              <Landmark className="w-3.5 h-3.5" /> The Shramjivi Ecosystem &mdash; Legacy
+            </div>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
+              A constellation of trusts, unions and cooperatives.
+            </h2>
+            <p className="mt-5 text-[#3d4441] leading-relaxed text-[16px] md:text-[17px]">
+              {ECOSYSTEM_LEGACY.intro}
+            </p>
+          </Reveal>
+
+          {/* Story chapters */}
+          <div className="space-y-6">
+            {ECOSYSTEM_LEGACY.groups.map((g, idx) => {
+              const Icon = LEGACY_ICONS[idx % LEGACY_ICONS.length];
+              return (
+                <Reveal key={g.label}>
+                  <div className="bg-white rounded-3xl ring-1 ring-[#e7e1d4] overflow-hidden">
+                    <div className="grid md:grid-cols-12 gap-0">
+                      <div className="md:col-span-4 bg-gradient-to-br from-[#336d2a] to-[#244e1d] text-[#faf6ef] p-7 md:p-9 relative overflow-hidden">
+                        <motion.div
+                          className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-[#ea8a2e]/25 blur-3xl"
+                          animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.9, 0.5] }}
+                          transition={{ duration: 8 + idx, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                        <div className="relative">
+                          <div className="w-12 h-12 rounded-full bg-white/15 backdrop-blur flex items-center justify-center mb-5">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div className="text-[10px] uppercase tracking-[0.22em] text-[#f5b574]">
+                            Chapter {idx + 1}
+                          </div>
+                          <div className="font-serif-display text-2xl md:text-[28px] leading-tight mt-2">
+                            {g.label}
+                          </div>
+                          <div className="mt-5 text-xs text-[#cfd9c5]">
+                            {g.items.length} organisations
+                          </div>
+                        </div>
+                      </div>
+                      <div className="md:col-span-8 p-7 md:p-9">
+                        <Stagger
+                          className="grid sm:grid-cols-2 gap-x-6 gap-y-3"
+                          staggerChildren={0.04}
+                        >
+                          {g.items.map((it) => (
+                            <StaggerItem key={it}>
+                              <div className="flex gap-3 items-start group">
+                                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#ea8a2e] shrink-0 group-hover:scale-150 transition-transform" />
+                                <span className="text-[14.5px] text-[#2d3431] leading-snug">
+                                  {it}
+                                </span>
+                              </div>
+                            </StaggerItem>
+                          ))}
+                        </Stagger>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          <Reveal className="mt-12 max-w-3xl mx-auto text-center">
+            <p className="font-serif-display text-xl md:text-2xl text-[#1a3812] italic leading-relaxed">
+              &ldquo;{ECOSYSTEM_LEGACY.outro}&rdquo;
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Ecosystem - Current */}
       <section className="bg-[#1a3812] text-[#e8e2d3] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="max-w-2xl mb-12">
-            <div className="text-xs uppercase tracking-[0.22em] text-[#ea8a2e] mb-3">Ecosystem</div>
+          <Reveal className="max-w-2xl mb-12">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#ea8a2e] mb-3">The Shramjivi Ecosystem &mdash; Current</div>
             <h2 className="font-serif-display text-4xl md:text-5xl leading-[1.05]">
-              Current implementing & emerging organizations.
+              Current implementing &amp; emerging organizations.
             </h2>
-          </div>
+          </Reveal>
           <Stagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-5" staggerChildren={0.08}>
             {[
               { title: "Shramjivi Mahila Kalyan Trust", text: "Women empowerment, counseling, HIV awareness, livelihood initiatives." },

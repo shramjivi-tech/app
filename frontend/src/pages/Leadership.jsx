@@ -119,9 +119,9 @@ export default function Leadership() {
       {/* Testimonials Carousel */}
       <section className="bg-[#f3ecdc] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <Reveal className="max-w-2xl mb-12">
+          <Reveal className="max-w-3xl mb-10">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Testimonials</div>
-            <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
+            <h2 className="font-serif-display text-2xl md:text-3xl text-[#1a3812] leading-tight">
               In the words of partners and people we serve.
             </h2>
           </Reveal>

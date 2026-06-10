@@ -12,8 +12,8 @@ export default function PartnersCarousel() {
   return (
     <div className="relative">
       <div className="ticker-fade space-y-4">
-        <Row items={row1} duration={38} direction="left" />
-        <Row items={row2} duration={46} direction="right" />
+        <Row items={row1} duration={75} direction="left" />
+        <Row items={row2} duration={90} direction="right" />
       </div>
     </div>
   );

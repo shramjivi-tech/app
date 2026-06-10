@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ArrowUpRight, CheckCircle2, HeartPulse, Users, Scissors, BookOpen } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, HeartPulse, Users, Scissors, BookOpen, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import Counter from "../components/Counter";
-import { FOCUS_AREAS, HEALTH_IMPACT, WOMEN_IMPACT, LIVELIHOOD_IMPACT, LEGACY_PROGRAMS } from "../data/mock";
+import { FOCUS_AREAS, HEALTH_IMPACT, WOMEN_IMPACT, LIVELIHOOD_IMPACT, LEGACY_PROGRAMS_FULL } from "../data/mock";
 
 const ICONS = { HeartPulse, Users, Scissors };
 
@@ -181,39 +181,113 @@ export default function Programs() {
       {/* Legacy programs */}
       <section className="bg-[#f3ecdc] py-20 md:py-28 mt-10">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <Reveal className="max-w-2xl mb-12">
-            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Legacy Programs</div>
+          <Reveal className="max-w-3xl mb-14">
+            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">
+              <BookOpen className="w-3.5 h-3.5" /> Legacy Programs
+            </div>
             <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
               Initiatives that shaped our journey.
             </h2>
+            <p className="mt-5 text-[#3d4441] leading-relaxed">
+              Some of our past programs have concluded, but each one is a chapter that
+              shaped what Shramjivi is today. Together they reflect a long-standing
+              commitment to education, rehabilitation, digital inclusion and the
+              empowerment of vulnerable communities.
+            </p>
           </Reveal>
-          <Stagger className="grid md:grid-cols-3 gap-6" staggerChildren={0.1}>
-            {LEGACY_PROGRAMS.map((p) => (
-              <StaggerItem key={p.title}>
-                <article className="bg-white rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full flex flex-col">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/40 to-transparent" />
-                    <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 text-[10px] uppercase tracking-[0.18em] text-[#6e4a0a] font-medium">
-                      {p.period}
-                    </div>
-                  </div>
-                  <div className="p-7 flex-1 flex flex-col">
-                    <BookOpen className="w-6 h-6 text-[#ea8a2e]" />
-                    <h3 className="font-serif-display text-2xl text-[#1a3812] mt-3">{p.title}</h3>
-                    <p className="mt-3 text-[15px] text-[#3d4441] leading-relaxed">{p.body}</p>
-                    <div className="mt-auto pt-5 text-sm font-medium text-[#336d2a]">{p.highlight}</div>
-                  </div>
-                </article>
-              </StaggerItem>
+
+          <div className="space-y-14">
+            {LEGACY_PROGRAMS_FULL.map((p, idx) => (
+              <LegacyProgramCard key={p.title} program={p} flipped={idx % 2 === 1} index={idx} />
             ))}
-          </Stagger>
+          </div>
         </div>
       </section>
     </div>
+  );
+}
+
+function LegacyProgramCard({ program, flipped, index }) {
+  return (
+    <Reveal>
+      <article
+        className={`bg-white rounded-3xl overflow-hidden ring-1 ring-[#e7e1d4] grid md:grid-cols-12 gap-0`}
+      >
+        {/* Image */}
+        <div className={`relative md:col-span-5 ${flipped ? "md:order-2" : ""}`}>
+          <div className="relative h-64 md:h-full min-h-[320px] overflow-hidden">
+            <motion.img
+              src={program.image}
+              alt={program.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              initial={{ scale: 1.08 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.4, ease: [0.2, 0.7, 0.2, 1] }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/45 via-transparent to-transparent" />
+            <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-[11px] uppercase tracking-[0.18em] text-[#6e4a0a] font-medium">
+              {program.period}
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className={`md:col-span-7 p-7 md:p-10 ${flipped ? "md:order-1" : ""}`}>
+          <div className="flex items-start gap-4">
+            <div className="w-11 h-11 rounded-full bg-[#ecf3e0] text-[#336d2a] flex items-center justify-center shrink-0">
+              <BookOpen className="w-5 h-5" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-[#6e4a0a]">
+                Implemented under {program.underTrust}
+              </div>
+              <h3 className="font-serif-display text-2xl md:text-3xl text-[#1a3812] mt-1 leading-tight">
+                {program.title}
+              </h3>
+            </div>
+          </div>
+
+          <p className="mt-6 text-[15px] md:text-[16px] text-[#3d4441] leading-relaxed">
+            {program.overview}
+          </p>
+
+          {/* Curriculum */}
+          <div className="mt-7">
+            <div className="text-[11px] uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">
+              {index === 0 ? "Curriculum" : index === 1 ? "Program included" : "Activities"}
+            </div>
+            <ul className="grid sm:grid-cols-2 gap-2">
+              {program.curriculum.map((c) => (
+                <li key={c} className="flex gap-2 text-[14px] text-[#2d3431]">
+                  <CheckCircle2 className="w-4 h-4 text-[#ea8a2e] shrink-0 mt-0.5" />
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Impact stats */}
+          <div className="mt-7 grid grid-cols-3 gap-4 bg-[#faf6ef] rounded-2xl p-5 border border-[#f0e8d3]">
+            {program.impact.map((it) => (
+              <div key={it.label}>
+                <div className="font-serif-display text-2xl md:text-[28px] text-[#336d2a] leading-tight">
+                  <Counter value={it.value} />
+                </div>
+                <div className="text-[11px] text-[#6d6357] mt-1 leading-snug">{it.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Pull quote */}
+          <div className="mt-6 flex gap-3 items-start">
+            <Quote className="w-5 h-5 text-[#ea8a2e] shrink-0 mt-1" />
+            <p className="text-[14px] italic text-[#6d6357] leading-relaxed">
+              &ldquo;{program.pullquote}&rdquo;
+            </p>
+          </div>
+        </div>
+      </article>
+    </Reveal>
   );
 }
