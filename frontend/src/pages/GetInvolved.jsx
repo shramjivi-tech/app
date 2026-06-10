@@ -16,7 +16,7 @@ import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
-import FundingChart from "../components/FundingChart";
+import MultiplierChart from "../components/MultiplierChart";
 import { toast } from "../hooks/use-toast";
 import { DONATION_PRESETS, SITE, FUTURE_SCOPE, QR_CODE_URL } from "../data/mock";
 
@@ -76,6 +76,11 @@ export default function GetInvolved() {
               and community trust — every rupee you give multiplies many times into reach,
               outcomes and dignity.
             </p>
+          </div>
+
+          {/* Multiplier hero chart - main feature */}
+          <div className="mt-12">
+            <MultiplierChart />
           </div>
 
           {/* Why partner */}
@@ -208,37 +213,38 @@ export default function GetInvolved() {
 
             <aside className="lg:col-span-5 space-y-5">
               {/* QR Code */}
-              <div className="bg-white rounded-3xl p-7 ring-1 ring-[#e7e1d4]">
+              <div className="bg-white rounded-3xl p-6 ring-1 ring-[#e7e1d4]">
                 <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 flex items-center gap-2">
                   <QrCode className="w-3.5 h-3.5" /> Scan to pay via UPI
                 </div>
-                <div className="font-serif-display text-2xl text-[#1a3812] mb-4">
+                <div className="font-serif-display text-xl text-[#1a3812] leading-snug">
                   Pay instantly using any UPI app
                 </div>
-                <div className="flex items-start gap-5 flex-col sm:flex-row">
+                <p className="text-sm text-[#3d4441] mt-2 leading-relaxed">
+                  Open GPay, PhonePe, Paytm or BHIM &mdash; scan the QR below to donate.
+                </p>
+
+                <div className="mt-5 flex flex-col items-center">
                   <div className="relative">
                     <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[#336d2a]/15 to-[#ea8a2e]/15 blur" />
-                    <div className="relative w-44 h-44 bg-white rounded-2xl border border-[#e7e1d4] p-2 flex items-center justify-center">
+                    <div className="relative w-52 h-52 bg-white rounded-2xl border border-[#e7e1d4] p-2.5 flex items-center justify-center shadow-sm">
                       <img
                         src={QR_CODE_URL}
                         alt="Shramjivi UPI QR Code"
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 px-2 py-1 rounded-full bg-[#ea8a2e] text-white text-[10px] font-semibold">
+                    <div className="absolute -top-2 -right-2 px-2 py-1 rounded-full bg-[#ea8a2e] text-white text-[10px] font-semibold tracking-wider">
                       UPI
                     </div>
                   </div>
-                  <div className="flex-1 text-sm text-[#3d4441] space-y-2">
-                    <p className="leading-relaxed">
-                      Open any UPI app (GPay, PhonePe, Paytm, BHIM) &mdash; scan and pay
-                      directly to:
-                    </p>
-                    <CopyableValue label="UPI ID" value={SITE.bank.upi} />
-                    <p className="text-xs text-[#6d6357]">
-                      For 80G receipt, please share your PAN via the form.
-                    </p>
-                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <CopyableValue label="UPI ID" value={SITE.bank.upi} />
+                  <p className="text-[11px] text-[#6d6357] mt-2 text-center">
+                    For 80G receipt, share your PAN via the form.
+                  </p>
                 </div>
               </div>
 
@@ -275,11 +281,6 @@ export default function GetInvolved() {
           </div>
 
           {/* Funding Flow Chart */}
-          <div className="mt-16">
-            <Reveal>
-              <FundingChart />
-            </Reveal>
-          </div>
         </div>
       </section>
 
@@ -330,13 +331,13 @@ function CopyableValue({ label, value }) {
     setTimeout(() => setCopied(false), 1800);
   }
   return (
-    <div className="flex items-center gap-2 bg-[#faf6ef] border border-[#e7e1d4] rounded-lg px-3 py-2">
-      <span className="text-xs uppercase tracking-[0.18em] text-[#6e4a0a]">{label}</span>
-      <span className="font-medium text-[#1a3812] text-sm truncate">{value}</span>
+    <div className="flex items-center gap-2 bg-[#faf6ef] border border-[#e7e1d4] rounded-lg px-3 py-2 w-full overflow-hidden">
+      <span className="text-[10px] uppercase tracking-[0.18em] text-[#6e4a0a] shrink-0">{label}</span>
+      <span className="font-medium text-[#1a3812] text-sm truncate flex-1 min-w-0">{value}</span>
       <button
         type="button"
         onClick={copy}
-        className="ml-auto inline-flex items-center gap-1 px-2 py-1 rounded-md hover:bg-[#ecf3e0] text-[#336d2a] text-xs"
+        className="shrink-0 inline-flex items-center gap-1 px-2 py-1 rounded-md hover:bg-[#ecf3e0] text-[#336d2a] text-xs"
         aria-label="Copy UPI ID"
       >
         {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}

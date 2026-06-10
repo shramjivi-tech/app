@@ -12,7 +12,7 @@ export default function Footer() {
               <img
                 src={LOGO_URL}
                 alt="Shramjivi"
-                className="h-14 w-auto object-contain brightness-110"
+                className="h-20 w-auto object-contain brightness-110"
               />
             </div>
             <p className="text-[15px] leading-relaxed text-[#cfc8b8] max-w-md">

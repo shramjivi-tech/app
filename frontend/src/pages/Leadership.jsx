@@ -1,7 +1,8 @@
-import { LEADERSHIP, TEAM_GROUPS, TESTIMONIALS } from "../data/mock";
-import { Quote, UserRound, ChevronRight } from "lucide-react";
+import { LEADERSHIP, TEAM_GROUPS } from "../data/mock";
+import { UserRound, ChevronRight } from "lucide-react";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import ImageSlot from "../components/ImageSlot";
+import TestimonialCarousel from "../components/TestimonialCarousel";
 
 function Initials({ name }) {
   return name
@@ -115,7 +116,7 @@ export default function Leadership() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials Carousel */}
       <section className="bg-[#f3ecdc] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="max-w-2xl mb-12">
@@ -124,27 +125,7 @@ export default function Leadership() {
               In the words of partners and people we serve.
             </h2>
           </Reveal>
-          <Stagger className="grid md:grid-cols-2 gap-6" staggerChildren={0.12}>
-            {TESTIMONIALS.map((t) => (
-              <StaggerItem key={t.name}>
-                <article className="bg-white rounded-3xl p-7 md:p-8 ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 hover:-translate-y-1 transition-all duration-300 h-full">
-                  <Quote className="w-7 h-7 text-[#ea8a2e]" />
-                  <p className="mt-4 text-[17px] text-[#2d3431] leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="mt-6 flex items-center gap-4 pt-5 border-t border-[#f0e8d3]">
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-14 h-14 rounded-full object-cover ring-2 ring-[#ecf3e0]"
-                    />
-                    <div>
-                      <div className="font-medium text-[#336d2a]">{t.name}</div>
-                      <div className="text-sm text-[#6d6357]">{t.title}</div>
-                    </div>
-                  </div>
-                </article>
-              </StaggerItem>
-            ))}
-          </Stagger>
+          <TestimonialCarousel />
         </div>
       </section>
     </div>

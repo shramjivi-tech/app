@@ -13,12 +13,13 @@ import {
 import { motion } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import Counter from "../components/Counter";
+import TestimonialCarousel from "../components/TestimonialCarousel";
+import PartnersCarousel from "../components/PartnersCarousel";
 import {
   HERO_STATS,
   FOCUS_AREAS,
   HERO_IMAGE,
   IMPACT_STORIES,
-  TESTIMONIALS,
   PARTNERS,
   SITE,
 } from "../data/mock";
@@ -247,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonial */}
+      {/* Testimonials Carousel */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <Reveal className="max-w-2xl mb-12">
@@ -256,36 +257,14 @@ export default function Home() {
               From partners and the people we serve.
             </h2>
           </Reveal>
-          <Stagger className="grid md:grid-cols-2 gap-6" staggerChildren={0.1}>
-            {TESTIMONIALS.slice(0, 2).map((t) => (
-              <StaggerItem key={t.name}>
-                <article className="bg-white rounded-3xl p-7 md:p-8 ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
-                  <Quote className="w-8 h-8 text-[#ea8a2e]" />
-                  <p className="mt-4 text-[17px] md:text-[18px] text-[#2d3431] leading-relaxed">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="mt-6 flex items-center gap-4 pt-5 border-t border-[#f0e8d3]">
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-14 h-14 rounded-full object-cover ring-2 ring-[#ecf3e0]"
-                    />
-                    <div>
-                      <div className="font-medium text-[#336d2a]">{t.name}</div>
-                      <div className="text-sm text-[#6d6357]">{t.title}</div>
-                    </div>
-                  </div>
-                </article>
-              </StaggerItem>
-            ))}
-          </Stagger>
+          <TestimonialCarousel />
         </div>
       </section>
 
-      {/* Partners / Collaborations */}
-      <section className="py-16 md:py-20 border-y border-[#e7e1d4] bg-[#faf6ef]">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <Reveal className="text-center mb-10">
+      {/* Partners / Collaborations Carousel */}
+      <section className="py-16 md:py-20 border-y border-[#e7e1d4] bg-[#faf6ef] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 mb-10">
+          <Reveal className="text-center">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">
               In collaboration with
             </div>
@@ -293,28 +272,8 @@ export default function Home() {
               Trusted by government, public health and community partners.
             </h2>
           </Reveal>
-          <Stagger
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
-            staggerChildren={0.06}
-          >
-            {PARTNERS.map((p) => (
-              <StaggerItem key={p.name}>
-                <div className="group bg-white rounded-2xl p-5 ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col items-start gap-3">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center font-serif-display text-white text-lg shadow-sm shrink-0"
-                    style={{ backgroundColor: p.color }}
-                    aria-hidden
-                  >
-                    {p.short.split(" ").map((w) => w[0]).slice(0, 2).join("")}
-                  </div>
-                  <div className="text-sm font-medium text-[#1a3812] leading-snug">
-                    {p.name}
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
         </div>
+        <PartnersCarousel />
       </section>
 
       {/* CTA */}
