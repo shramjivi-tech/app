@@ -206,7 +206,7 @@ export const IMPACT_STORIES = [
       "/people/imran.jpg",
   },
   {
-    name: "Nainya",
+    name: "Naiya",
     program: "Women Empowerment",
     title: "Restored Her Choice and Protection",
     excerpt:
@@ -404,7 +404,7 @@ export const TESTIMONIALS = [
     name: "Subhash Patel",
     title: "Cluster Prevention Officer, DISHA DAPCU, Surat",
     image:
-      "/people/SubhashPatel.jpg",
+      "/people/Subhash Patel.JPG",
   },
   {
     quote:
@@ -412,7 +412,7 @@ export const TESTIMONIALS = [
     name: "Irshad Shaikh",
     title: "Cluster Prevention Officer, DISHA DAPCU, Surat",
     image:
-      "/people/irshadshaikh.jpg",
+      "/people/irshad shaikh.JPG",
   },
   {
     quote:
@@ -420,7 +420,7 @@ export const TESTIMONIALS = [
     name: "Aditi Buchake",
     title: "Research Officer-Field, ICMR-NITVAR, Pune",
     image:
-      "/people/aditibuchake.png",
+      "/people/aditi buchake.png",
   },
   {
     quote:
