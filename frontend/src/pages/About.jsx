@@ -21,44 +21,90 @@ export default function About() {
             </h1>
           </div>
           <p className="lg:col-span-4 text-[16px] text-[#3d4441] leading-relaxed">
-            Shramjivi is a historic institution established in 1940 in Surat — rooted in
+            Shramjivi is a historic institution established in Surat — rooted in
             Gandhian principles of dignity of labour, self-reliance and social justice.
           </p>
         </div>
       </section>
 
-      {/* Long-form story */}
-      <section id="story" className="pb-20 scroll-mt-24">
-        <div className="max-w-4xl mx-auto px-5 md:px-8 space-y-6 text-[17px] text-[#2d3431] leading-[1.75]">
-          <p>
-            Founded by Late Shri Ishwarlal Gulabbhai Desai under the guidance of prominent
-            leaders including Late Shri Morarji Desai, the institution began as a movement to
-            uplift the working class — contributing significantly to the welfare of labour
-            communities in South Gujarat.
-          </p>
-          <p>
-            Over the decades, Shramjivi evolved into a comprehensive ecosystem comprising
-            unions, cooperatives and charitable trusts — collectively safeguarding livelihoods,
-            improving working conditions, and supporting workers and their families across
-            textiles, transport, construction and informal labour.
-          </p>
-          <p>
-            Recognising that the well-being of workers is deeply connected to their families,
-            Shramjivi expanded to women and children. This led to the establishment of{" "}
-            <span className="font-medium text-[#336d2a]">Shramjivi Mahila Kalyan Trust in 1994</span>
-            , with a mission to empower women through counseling, legal support, livelihood
-            opportunities, healthcare awareness and skill development.
-          </p>
-          <p>
-            At the heart of this work is <span className="font-medium text-[#336d2a]">Shramjivi Sevalaya</span>
-            — a community hub bringing together programs in health, education, skill
-            development and social support under one roof. It stands as a symbol of trust,
-            continuity and grassroots engagement.
-          </p>
-        </div>
-      </section>
+      {/* Archival note — just below headline */}
+<section className="pb-16">
+  <div className="max-w-7xl mx-auto px-5 md:px-8">
+    <div className="grid md:grid-cols-12 gap-8 items-center">
+      <Reveal direction="right" className="md:col-span-5">
+        <figure className="relative rounded-2xl overflow-hidden ring-1 ring-[#d6c8a8] bg-[#1a1a1a] aspect-[16/9]">
+          <img
+            src="/archive.jpg"
+            alt="Shramjivi archive"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ filter: "grayscale(100%) sepia(45%) contrast(1.08) brightness(0.92)" }}
+          />
+          <div
+            className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none"
+            style={{
+              backgroundImage: "radial-gradient(rgba(120, 80, 40, 0.18) 1px, transparent 1.2px)",
+              backgroundSize: "3px 3px",
+            }}
+          />
+          <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#faf6ef]/95 text-[10px] uppercase tracking-[0.22em] text-[#6e4a0a] font-medium">
+            <Camera className="w-3 h-3" /> Archive
+          </div>
+        </figure>
+      </Reveal>
+      <Reveal className="md:col-span-7">
+        <p className="font-serif-display text-xl md:text-2xl text-[#1a3812] italic leading-relaxed">
+          &ldquo;{ECOSYSTEM_LEGACY.outro}&rdquo;
+        </p>
+      </Reveal>
+    </div>
+  </div>
+</section>
 
-      {/* Mission ribbon */}
+
+
+     {/* Long-form story */}
+<section id="story" className="pb-0 scroll-mt-24">
+  <div className="max-w-7xl mx-auto px-5 md:px-8">
+    <div className="grid lg:grid-cols-12 gap-10 items-start">
+     <div className="lg:col-span-7 space-y-6 text-[17px] text-[#2d3431] leading-[1.75]">
+        
+        <p style={{ paddingTop: '40px' }}>  
+          Founded by Late Shri Ishwarlal Gulabbhai Desai, the institution began as a movement to
+          uplift the working class — contributing significantly to the welfare of labour
+          communities in South Gujarat. Over the decades, Shramjivi evolved into a comprehensive ecosystem comprising
+          unions, cooperatives and charitable trusts — collectively safeguarding livelihoods,
+          improving working conditions, and supporting workers and their families across
+          textiles, transport, construction and informal labour.
+        </p>
+        <p>
+          Recognising that the well-being of workers is deeply connected to their families,
+          Shramjivi expanded to women and children. This led to the establishment of{" "}
+          <span className="font-medium text-[#336d2a]">Shramjivi Mahila Kalyan Trust in 1994</span>
+          , with a mission to empower women through counseling, legal support, livelihood
+          opportunities, healthcare awareness and skill development.
+        </p>
+        <p>
+          At the heart of this work is <span className="font-medium text-[#336d2a]">Shramjivi Sevalaya</span>
+          — a community hub bringing together programs in health, education, skill
+          development and social support under one roof. It stands as a symbol of trust,
+          continuity and grassroots engagement.
+        </p>
+      </div>
+      <Reveal direction="left" className="lg:col-span-5">
+       <div className="relative rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] aspect-[3/4] lg:sticky lg:top-28">
+          <img
+            src="/meeting.png"
+            alt="Shramjivi community"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/55 via-transparent to-transparent" />
+        </div>
+      </Reveal>
+    </div>
+  </div>
+</section>
+
+      {/* Mission ribbon 
       <section className="bg-[#f3ecdc]">
         <div className="max-w-7xl mx-auto px-5 md:px-8 py-20 grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-5">
@@ -81,7 +127,9 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      
 
       {/* Timeline */}
       <section id="milestones" className="py-20 md:py-28 scroll-mt-24">
@@ -95,6 +143,10 @@ export default function About() {
           <Timeline items={MILESTONES} />
         </div>
       </section>
+
+     
+
+
 
       {/* Ecosystem Legacy - a story chapter */}
       <section id="ecosystem-legacy" className="py-20 md:py-28 bg-[#f3ecdc] scroll-mt-24">
@@ -118,7 +170,7 @@ export default function About() {
           >
             {HISTORICAL_PHOTOS.map((p, i) => (
               <StaggerItem key={i}>
-                <figure className="group relative rounded-2xl overflow-hidden ring-1 ring-[#d6c8a8] bg-[#1a1a1a] aspect-[4/5]">
+                 <figure className="relative rounded-2xl overflow-hidden ring-1 ring-[#d6c8a8] bg-[#1a1a1a] aspect-[16/9]">
                   <img
                     src={p.image}
                     alt={p.caption}
@@ -203,13 +255,25 @@ export default function About() {
             })}
           </div>
 
-          <Reveal className="mt-12 max-w-3xl mx-auto text-center">
+         {/* <Reveal className="mt-12 max-w-3xl mx-auto text-center">
             <p className="font-serif-display text-xl md:text-2xl text-[#1a3812] italic leading-relaxed">
               &ldquo;{ECOSYSTEM_LEGACY.outro}&rdquo;
             </p>
-          </Reveal>
+          </Reveal> */}
         </div>
       </section>
+
+       {/* Picture strip */}
+
+
+ <section className="relative overflow-hidden h-[25vh] md:h-[30vh]">
+  <img
+    src="/groups.png"
+    alt="Shramjivi community"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/40 via-transparent to-transparent" />
+</section>
 
       {/* Ecosystem - Current */}
       <section id="ecosystem-current" className="bg-[#1a3812] text-[#e8e2d3] py-20 md:py-28 scroll-mt-24">
@@ -238,74 +302,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Future scope — final chapter of the story arc */}
-      <section id="future" className="py-20 md:py-28 bg-[#faf6ef] scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <Reveal className="max-w-3xl mb-14">
-            <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">
-              <Compass className="w-3.5 h-3.5" /> The Shramjivi Ecosystem &mdash; Future
-            </div>
-            <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
-              From legacy and current work, into what comes next.
-            </h2>
-            <p className="mt-5 text-[#3d4441] leading-relaxed text-[16px] md:text-[17px]">
-              The next chapter of Shramjivi&rsquo;s story builds on the same model that has
-              worked for decades &mdash; existing infrastructure, peer leadership, and
-              partnerships with government systems &mdash; expanding into digital inclusion,
-              child safety, and new HIV-prevention frontiers.
-            </p>
-          </Reveal>
-
-          <div className="space-y-10">
-            {FUTURE_SCOPE_DETAILED.map((p, idx) => (
-              <Reveal key={p.title}>
-                <article className="bg-white rounded-3xl overflow-hidden ring-1 ring-[#e7e1d4] grid md:grid-cols-12 gap-0">
-                  <div className={`relative md:col-span-5 ${idx % 2 === 1 ? "md:order-2" : ""}`}>
-                    <div className="relative h-56 md:h-full min-h-[300px] overflow-hidden">
-                      <img src={p.image} alt={p.title} className="absolute inset-0 w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/55 via-transparent to-transparent" />
-                      <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#ea8a2e] text-white text-[11px] font-medium tracking-wide">
-                        {p.horizon}
-                      </div>
-                    </div>
-                  </div>
-                  <div className={`md:col-span-7 p-7 md:p-9 ${idx % 2 === 1 ? "md:order-1" : ""}`}>
-                    <div className="text-[11px] uppercase tracking-[0.22em] text-[#6e4a0a]">
-                      Initiative {idx + 1} &middot; {p.durationLine}
-                    </div>
-                    <h3 className="font-serif-display text-2xl md:text-[30px] text-[#1a3812] mt-2 leading-tight">
-                      {p.title}
-                    </h3>
-                    <div className="mt-1 text-[14px] text-[#336d2a] font-medium">{p.tagline}</div>
-                    <p className="mt-4 text-[14.5px] text-[#3d4441] leading-relaxed">{p.body}</p>
-                    <div className="mt-5 grid grid-cols-3 gap-3 bg-[#faf6ef] rounded-2xl p-4 border border-[#f0e8d3]">
-                      {p.impact.map((it) => (
-                        <div key={it.label}>
-                          <div className="font-serif-display text-xl md:text-[22px] text-[#336d2a] leading-tight">
-                            <Counter value={it.value} />
-                          </div>
-                          <div className="text-[10px] text-[#6d6357] mt-1 leading-snug">{it.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal className="mt-14 text-center">
-            <Link
-              to="/get-involved"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#336d2a] text-[#faf6ef] font-medium hover:bg-[#244e1d] transition-colors duration-300"
-            >
-              Help unlock the next chapter <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Gallery strip */}
+      
+      {/* Gallery strip 
       <section id="field" className="py-16 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="flex items-end justify-between mb-6">
@@ -322,7 +320,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Location footer block */}
       <section className="max-w-7xl mx-auto px-5 md:px-8 pb-16">

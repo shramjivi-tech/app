@@ -5,13 +5,13 @@ export const LOGO_URL =
   "https://customer-assets.emergentagent.com/job_flamboyant-neumann-7/artifacts/e4rg8y82_final%20shramjivi%20logo.png";
 
 export const HERO_ILLUSTRATION =
-  "https://customer-assets.emergentagent.com/job_flamboyant-neumann-7/artifacts/n36bsbk9_WOMEN.png";
+  "/hero.png";
 
 export const WELCOME_PICTURE =
-  "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85";
+  "/welcome.jpg";
 
 export const ANNUAL_REPORT_URL =
-  "https://customer-assets.emergentagent.com/job_715e75ad-7048-46a3-b79e-56b4ed659619/artifacts/teqw20o8_Report%202025-26%20%281%29.pdf";
+  "/Shramjivi Report 2025-26.pdf";
 
 export const REPORTS = [
   {
@@ -46,8 +46,7 @@ export const REPORTS = [
 export const WELCOME_MESSAGE = {
   title: "A welcome message",
   paragraphs: [
-    "For decades, Shramjivi has been deeply rooted in community service \u2014 working consistently to support women, workers, and vulnerable groups through government programs and institutional support.",
-    "Over the years, our work has grown steadily across health, counseling, awareness, and livelihood initiatives, reaching communities through trusted and consistent engagement. Our approach has always been grounded \u2014 working within existing systems, responding to real needs, and building long-term trust.",
+    "For decades, Shramjivi has been deeply rooted in community service \u2014 working consistently to support women, workers, and vulnerable groups through government programs and institutional support. Over the years, our work has grown steadily across health, counseling, awareness, and livelihood initiatives, reaching communities through trusted and consistent engagement. Our approach has always been grounded \u2014 working within existing systems, responding to real needs, and building long-term trust.",
     "This continuity has been our strength. As we reflect on this journey, we also recognize that the needs of communities are evolving \u2014 and so must our approach. We are now entering a new phase focused on expanding our reach, strengthening our systems, and adopting more structured and modern approaches to increase our impact.",
     "This is a moment of transition \u2014 from sustained service to scalable impact. We extend our sincere gratitude to all those who have been part of this journey, and we look forward to building the next chapter together.",
   ],
@@ -59,7 +58,7 @@ export const WELCOME_MESSAGE = {
 
 export const SITE = {
   name: "Shramjivi",
-  fullName: "Shramjivi Mahila Kalyan Trust",
+  fullName: "Shramjivi Ecosystem",
   tagline: "Rooted in Legacy. Moving Towards Scalable Impact.",
   estd: 1940,
   location: "Surat, Gujarat, India",
@@ -81,10 +80,10 @@ export const SITE = {
 };
 
 export const HERO_STATS = [
-  { value: "85+", label: "Years of Service" },
-  { value: "58,000+", label: "Lives impacted in 2025\u201326" },
-  { value: "3,260+", label: "Women reached through counseling" },
-  { value: "2,000+", label: "Women trained in livelihood skills" },
+  { value: "85+", label: "Years of Legacy" },
+  { value: "58,000+", label: "impacted with Targeted Intervention programs in 2025\u201326" },
+  { value: "3,260+", label: "Women were provided counselings and legal guidance in 2025\u201326" },
+  { value: "61,310", label: "Lives impacted overall in 2025\u201326" },
 ];
 
 export const FOCUS_AREAS = [
@@ -96,7 +95,9 @@ export const FOCUS_AREAS = [
       "Targeted HIV prevention aligned with NACP-V, focused on high-risk and vulnerable populations across Surat\u2014migrant workers and HRG communities.",
     icon: "HeartPulse",
     image:
-      "https://images.unsplash.com/photo-1648964388258-e71b58683ed0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxJbmRpYSUyMGhlYWx0aGNhcmV8ZW58MHx8fHwxNzgxMDIyOTM4fDA&ixlib=rb-4.1.0&q=85",
+      "/Health&Well-Being.jpeg",
+       image2: "/hiv2.jpeg",
+  image3: "/hiv3.jpeg",
   },
   {
     id: "women",
@@ -106,7 +107,9 @@ export const FOCUS_AREAS = [
       "Counseling services for women facing domestic, social, and personal challenges \u2014 conflict resolution, legal guidance, and continuous follow-up.",
     icon: "Users",
     image:
-      "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85",
+      "WomenEmpowerment&Support.jpg",
+       image2: "/women2.jpg",
+  image3: "/women3.jpg",
   },
   {
     id: "livelihood",
@@ -116,7 +119,9 @@ export const FOCUS_AREAS = [
       "A practical, livelihood-oriented sewing training program enabling women to earn independently \u2014 most begin earning even before completing the course.",
     icon: "Scissors",
     image:
-      "https://images.pexels.com/photos/27872045/pexels-photo-27872045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "Livelihood&SkillDevelopment.jpeg",
+       image2: "/liveli2.jpeg",
+  image3: "/liveli3.jpeg",
   },
 ];
 
@@ -125,17 +130,17 @@ export const MILESTONES = [
   { year: "1981", text: "Harihar Thakor Smarak Trust established for community outreach" },
   { year: "1994", text: "Shramjivi Mahila Kalyan Trust established for women empowerment" },
   { year: "1997", text: "Toolkit assistance to thousands under Manav Kalyan Yojna" },
-  { year: "1998", text: "Counseling services started under Government-supported initiative" },
-  { year: "2000", text: "Sewing Training Program started" },
+  { year: "1998", text: "Women legal support and Counseling services started under Government-supported initiative" },
+  { year: "2000", text: "Sewing Training Program started to promote livlihood for Women" },
   { year: "2001", text: "Street Children Outreach & HIV Awareness Program started" },
-  { year: "2002", text: "HIV TI \u2014 Migrant Program launched" },
-  { year: "2005", text: "Second counseling center started" },
-  { year: "2006", text: "National Child Labour Program launched (Phase-I, 3 schools)" },
-  { year: "2007", text: "Computer Training Program started" },
-  { year: "2008", text: "HIV TI \u2014 MSM Program started" },
-  { year: "2017", text: "National Child Labour Program (Phase-II) \u2014 7 schools under Shramjivi" },
+  { year: "2002", text: "Targeted Intervention (TI) in HIV \u2014 Migrant Program launched" },
+  { year: "2005", text: "Second center for legal support and Counseling services started for Women" },
+  { year: "2006", text: "National Child Labour Program launched (Phase-I, 3 schools were entrusted to Shramjivi under Jigar Bal Kalyan Trust)" },
+  { year: "2007", text: "Computer Training Program started for livlihood opportunities" },
+  { year: "2008", text: "Targeted Intervention (TI) in HIV \u2014 MSM Program started" },
+  { year: "2017", text: "National Child Labour Program (Phase-II) \u2014 7 schools under Shramjivi because of remarkable performance" },
   { year: "2026", text: "Local venue and community partner for ICMR-NITVAR IBBS-HRG project, Surat" },
-  { year: "2026+", text: "Digital Saheli Initiative planned" },
+  { year: "2026+", text: "On approval two FSW Targeted Intervention (TI) in HIV programs under Shramjivi, Digital Saheli Initiative planned" },
 ];
 
 export const HEALTH_IMPACT = {
@@ -177,8 +182,8 @@ export const WOMEN_IMPACT = [
 export const LIVELIHOOD_IMPACT = [
   { label: "Women Enrolled Since Inception", value: "2,000+" },
   { label: "Enrolled (2025\u201326)", value: "12" },
-  { label: "Successfully Completed", value: "7" },
-  { label: "Currently Under Training", value: "5" },
+  { label: "Successfully Completed (2025\u201326)", value: "7" },
+  { label: "Currently Under Training (2025\u201326)", value: "5" },
 ];
 
 export const IMPACT_STORIES = [
@@ -189,7 +194,7 @@ export const IMPACT_STORIES = [
     excerpt:
       "A migrant worker living alone in Surat, Kiran avoided seeking help due to fear and stigma. Through field outreach, counseling, and ART linkage, he found both medical and emotional support.",
     image:
-      "https://images.unsplash.com/photo-1648964388258-e71b58683ed0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxJbmRpYSUyMGhlYWx0aGNhcmV8ZW58MHx8fHwxNzgxMDIyOTM4fDA&ixlib=rb-4.1.0&q=85",
+      "/people/kiran.jpg",
   },
   {
     name: "Imran",
@@ -198,7 +203,7 @@ export const IMPACT_STORIES = [
     excerpt:
       "A young daily-wage worker with limited awareness about HIV. After participating in awareness sessions, he adopted safer practices and encouraged friends and co-workers to do the same.",
     image:
-      "https://images.unsplash.com/photo-1603185030522-05d4497bb180?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxJbmRpYSUyMGNoaWxkcmVufGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85",
+      "/people/imran.jpg",
   },
   {
     name: "Nainya",
@@ -207,7 +212,7 @@ export const IMPACT_STORIES = [
     excerpt:
       "Shramjivi facilitated counseling and legal proceedings that enabled Nainya to safely return to Nari Suraksha Gruh after her divorce \u2014 ensuring her dignity and continued support.",
     image:
-      "https://images.unsplash.com/flagged/photo-1577604981316-298e453a19dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxJbmRpYSUyMGNvbW11bml0eXxlbnwwfHx8fDE3ODEwMjI5MzJ8MA&ixlib=rb-4.1.0&q=85",
+       "/people/naiya.jpg",
   },
   {
     name: "Lata Ben",
@@ -216,7 +221,7 @@ export const IMPACT_STORIES = [
     excerpt:
       "Approached Shramjivi during a difficult phase, secured legal aid and monthly maintenance for her daughter. Today she has served the Trust for over 25 years \u2014 from seeker to leader.",
     image:
-      "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85",
+     "/people/lataben.jpg",
   },
   {
     name: "Sunita Ben",
@@ -225,7 +230,7 @@ export const IMPACT_STORIES = [
     excerpt:
       "Sole earner of her family, Sunita joined the sewing program and gradually built a steady income through garment making \u2014 supporting her household independently.",
     image:
-      "https://images.pexels.com/photos/27872045/pexels-photo-27872045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+     "/people/sunitaben.jpg",
   },
   {
     name: "Bhavini Joshi",
@@ -234,7 +239,7 @@ export const IMPACT_STORIES = [
     excerpt:
       "Joined Shramjivi\u2019s computer training program to learn basic digital skills. Today she leads the counseling support team at Shramjivi Sevalaya, Surat.",
     image:
-      "https://images.unsplash.com/photo-1643199187247-b3b6009bf0bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxjb21wdXRlciUyMHRyYWluaW5nJTIwY2xhc3N8ZW58MHx8fHwxNzgxMDgxMjMzfDA&ixlib=rb-4.1.0&q=85",
+      "/people/bhaviniben.jpeg",
   },
 ];
 
@@ -275,7 +280,7 @@ export const AWARDS = [
     body:
       "Acknowledged for sustained, community-driven HIV prevention work under NACP among migrant and high-risk populations across Surat.",
     image:
-      "https://images.unsplash.com/photo-1773212902273-278c261a4c98?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHw0fHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+      "/award1.jpeg",
   },
   {
     title: "Community Partner of the Year",
@@ -283,7 +288,7 @@ export const AWARDS = [
     body:
       "Honoured by Surat District AIDS Prevention & Control Unit (DAPCU) for outstanding collaboration and grassroots reach.",
     image:
-      "https://images.unsplash.com/photo-1764874299025-d8b2251f307d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+      "/award2.jpeg",
   },
   {
     title: "Women Empowerment Excellence",
@@ -291,7 +296,7 @@ export const AWARDS = [
     body:
       "Felicitated for over 25 years of consistent women empowerment programming, counseling, legal aid, and livelihood training in South Gujarat.",
     image:
-      "https://images.unsplash.com/photo-1764408721535-2dcb912db83e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+      "/award3.jpeg",
   },
 ];
 
@@ -299,22 +304,22 @@ export const LEADERSHIP = [
   {
     name: "Mamta Desai",
     role: "Trustee & President",
-    image: "",
+    image: "/people/Mamta Desai.jpg",
   },
   {
     name: "Mohanbhai Dhabuwala",
     role: "Trustee & Secretary",
-    image: "",
+    image: "/people/Mohanbhai Dhabuwala.jpeg",
   },
   {
     name: "Yuti Desai",
     role: "Trustee \u2014 Strategic Initiatives",
-    image: "",
+    image: "/people/Yuti Desai.jpg",
   },
   {
     name: "Shrungi Desai",
     role: "Trustee & Pro Bono Advocate",
-    image: "",
+    image: "/people/shrungi desai.jpeg",
   },
 ];
 
@@ -322,68 +327,69 @@ export const TEAM_GROUPS = [
   {
     label: "Project Management & Monitoring",
     members: [
-      { name: "Bhupendra Borad", role: "Project Manager" },
-      { name: "Hitesh Chaudhari", role: "Project Manager" },
-      { name: "Rajesh Purohit", role: "M&E / Accountant" },
-      { name: "Shailesh Vekariya", role: "M&E / Accountant" },
-      { name: "Neha Patel", role: "M&E / Accountant" },
+      { name: "Bhupendra Borad", role: "Project Manager", image: "/people/bhupendra borad.jpeg" },
+      { name: "Hitesh Chaudhari", role: "Project Manager",image: "/people/hitesh chaudhary.jpeg"},
+      { name: "Rajesh Purohit", role: "M&E / Accountant",image: "/people/rajesh purohit.jpeg" },
+      { name: "Shailesh Vekariya", role: "M&E / Accountant",image: "/people/shailesh vekariya.jpeg" },
+      { name: "Neha Patel", role: "M&E / Accountant",image: "/people/neha patel.jpeg" },
     ],
   },
   {
     label: "Counseling & Social Work",
     members: [
-      { name: "Suananda Chaudhari", role: "Program Counsellor" },
-      { name: "Ajay Chaudhary", role: "Program Counsellor" },
-      { name: "Bhaviniben Joshi", role: "Social Worker" },
-      { name: "Sunitaben Patel", role: "Social Worker" },
-      { name: "Meenaben Patel", role: "Assistant Social Worker" },
-      { name: "Kanishaben Barot", role: "Assistant Social Worker" },
-      { name: "Gayatriben Bhavsar", role: "Vocational Instructor" },
+      { name: "Suananda Chaudhari", role: "Program Counsellor",image: "/people/sunandha chaudhary.jpeg"  },
+      { name: "Ajay Chaudhary", role: "Program Counsellor",image: "/people/ajay chaudhary.jpeg"  },
+      { name: "Bhaviniben Joshi", role: "Social Worker",image: "/people/bhaviniben joshi.jpeg"  },
+      { name: "Sunitaben Patel", role: "Social Worker",image: "/people/sunitaben patel.jpeg"  },
+      { name:"Kanishaben Barot", role: "Assistant Social Worker" ,image: "/people/kanishaben barot.jpeg" },
+      { name: "Meenaben Patel", role: "Assistant Social Worker" ,image: "/people/meenaben patel.jpeg" },
+      { name: "Gayatriben Bhavsar", role: "Vocational Instructor",image: "/people/gayatriben bhavsar.jpeg"  },
+         { name: "Seemaben Jariwala", role: "Computer Operator",image: "/people/seemaben patel.jpeg"  },
+      { name: "Dikshitaben Patel", role: "Computer Operator",image: "/people/dikshitaben patel.jpeg"  },
     ],
   },
   {
     label: "Field Outreach",
     members: [
-      { name: "Rabindra Rout", role: "Outreach Worker" },
-      { name: "Navin Gajjar", role: "Outreach Worker" },
-      { name: "Brijesh Solanki", role: "Outreach Worker" },
-      { name: "Hillol Mallick", role: "Outreach Worker" },
-      { name: "Digamber Sahoo", role: "Outreach Worker" },
-      { name: "Ugrasen Pradhan", role: "Outreach Worker" },
+      { name: "Rabindra Rout", role: "Outreach Worker",image: "/people/rabindra rout.jpeg"  },
+      { name: "Navin Gajjar", role: "Outreach Worker" ,image: "/people/navin gajjar.jpeg"},
+      { name: "Brijesh Solanki", role: "Outreach Worker",image: "/people/brijesh solanki.jpeg" },
+      { name: "Hillol Mallick", role: "Outreach Worker",image: "/people/hillol mallick.jpeg" },
+      { name: "Digamber Sahoo", role: "Outreach Worker" ,image: "/people/digamber sahoo.jpeg"},
+      { name: "Ugrasen Pradhan", role: "Outreach Worker",image: "/people/agrasen pradhan.jpeg" },
     ],
   },
   {
     label: "Administration & Support",
     members: [
-      { name: "Seemaben Jariwala", role: "Computer Operator" },
-      { name: "Dikshitaben Patel", role: "Computer Operator" },
-      { name: "Aashishkumar Patel", role: "Treasurer" },
-      { name: "Bharatbhai Patel", role: "Clerk" },
-      { name: "Lataben Khandekar", role: "Peon" },
-      { name: "Anil Patel", role: "Peon" },
+   
+      { name: "Aashishkumar Patel", role: "Treasurer" ,image: "/people/ashish patel.jpeg" },
+      { name: "Bharatbhai Patel", role: "Clerk",image: "/people/bharat patel.jpeg"  },
+      { name: "Lataben Khandekar", role: "Peon",image: "/people/lataben khandekar.jpeg"  },
+      { name: "Anil Patel", role: "Peon",image: "/people/anil patel.jpeg"  },
     ],
   },
   {
     label: "Peer Educators",
     members: [
-      { name: "Ramkrishna Maharana", role: "Peer Educator" },
-      { name: "Gaur Hari Bisoi", role: "Peer Educator" },
-      { name: "Ratikant", role: "Peer Educator" },
-      { name: "Uttam Rath", role: "Peer Educator" },
-      { name: "Jitu Padhiyari", role: "Peer Educator" },
-      { name: "Dusmant Jaina", role: "Peer Educator" },
-      { name: "Fakir Imran Shah", role: "Peer Educator" },
-      { name: "Harinarayan Saini", role: "Peer Educator" },
-      { name: "Faruk Shah", role: "Peer Educator" },
-      { name: "Chandra Sen", role: "Peer Educator" },
-      { name: "Charandeep Sinh", role: "Peer Educator" },
-      { name: "Shrikant Sahoo", role: "Peer Educator" },
-      { name: "Sarafat Hussen Ansari", role: "Peer Educator" },
-      { name: "Khalil Shah", role: "Peer Educator" },
-      { name: "Khursid Khan", role: "Peer Educator" },
-      { name: "Dhanjay Rout", role: "Peer Educator" },
-      { name: "Mukesh Rashiya", role: "Peer Educator" },
-      { name: "Ashish Vekariya", role: "Peer Educator" },
+      { name: "Ramkrishna Maharana", role: "Peer Educator",image: "/people/ramkrishna maharana.jpeg" },
+      { name: "Gaur Hari Bisoi", role: "Peer Educator" ,image: "/people/gaur hari bisoi.jpeg"},
+      { name: "Ratikant", role: "Peer Educator",image: "/people/ratikant.jpeg" },
+      { name: "Uttam Rath", role: "Peer Educator" ,image: "/people/uttam rath.jpeg"},
+      { name: "Jitu Padhiyari", role: "Peer Educator",image: "/people/jitu padhiyari.jpeg" },
+      { name: "Dusmant Jaina", role: "Peer Educator",image: "/people/dusmant jaina.jpeg" },
+      { name: "Fakir Imran Shah", role: "Peer Educator",image: "/people/fakir imran shah.jpeg" },
+      { name: "Harinarayan Saini", role: "Peer Educator",image: "/people/harinarayan saini.jpeg" },
+      { name: "Faruk Shah", role: "Peer Educator",image: "/people/faruk shah.jpeg" },
+      { name: "Chandra Sen", role: "Peer Educator",image: "/people/chandra sen.jpeg" },
+      { name: "Charandeep Sinh", role: "Peer Educator" ,image: "/people/charandeep sinh.jpeg"},
+      { name: "Shrikant Sahoo", role: "Peer Educator" ,image: "/people/shrikant sahoo.jpeg"},
+      { name: "Sarafat Hussen Ansari", role: "Peer Educator" ,image: "/people/sarafat.jpeg"},
+      { name: "Khalil Shah", role: "Peer Educator",image: "/people/khalil shah.jpeg" },
+      { name: "Khursid Khan", role: "Peer Educator" ,image: "/people/khursid khan.jpeg"},
+      { name: "Dhanjay Rout", role: "Peer Educator" ,image: "/people/dhanjay rout.jpeg"},
+      { name: "Mukesh Rashiya", role: "Peer Educator" ,image: "/people/mukesh rashiya.jpeg"},
+      { name: "Ashish Vekariya", role: "Peer Educator" ,image: "/people/ashish vekariya.jpeg"},
     ],
   },
 ];
@@ -398,7 +404,7 @@ export const TESTIMONIALS = [
     name: "Subhash Patel",
     title: "Cluster Prevention Officer, DISHA DAPCU, Surat",
     image:
-      "https://images.pexels.com/photos/7580837/pexels-photo-7580837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/people/SubhashPatel.jpg",
   },
   {
     quote:
@@ -406,7 +412,7 @@ export const TESTIMONIALS = [
     name: "Irshad Shaikh",
     title: "Cluster Prevention Officer, DISHA DAPCU, Surat",
     image:
-      "https://images.pexels.com/photos/7580940/pexels-photo-7580940.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/people/irshadshaikh.jpg",
   },
   {
     quote:
@@ -414,7 +420,7 @@ export const TESTIMONIALS = [
     name: "Aditi Buchake",
     title: "Research Officer-Field, ICMR-NITVAR, Pune",
     image:
-      "https://images.pexels.com/photos/34061448/pexels-photo-34061448.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/people/aditibuchake.png",
   },
   {
     quote:
@@ -422,7 +428,7 @@ export const TESTIMONIALS = [
     name: "Kashish Kazi",
     title: "Sewing Program Student",
     image:
-      "https://images.pexels.com/photos/37145167/pexels-photo-37145167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/people/kashishkazi.jpg",
   },
 ];
 
@@ -450,14 +456,20 @@ export const FUTURE_SCOPE = [
 export const DONATION_PRESETS = [500, 1000, 2500, 5000, 10000, 25000];
 
 export const PARTNERS = [
-  { name: "National AIDS Control Organisation", short: "NACO", color: "#1f5b8a" },
-  { name: "Gujarat State AIDS Control Society", short: "GSACS", color: "#0f6f3e" },
-  { name: "Surat Municipal Corporation", short: "SMC", color: "#7a3b14" },
-  { name: "Dept. of Women & Child Development, Gujarat", short: "WCD Gujarat", color: "#8a2858" },
-  { name: "ICMR-NITVAR, Pune", short: "ICMR-NITVAR", color: "#1c3a5e" },
-  { name: "Surat Labour Department", short: "Labour Dept.", color: "#4f3b0a" },
-  { name: "Akshay Patra Foundation", short: "Akshay Patra", color: "#a14a17" },
-  { name: "DISHA DAPCU, Surat", short: "DISHA DAPCU", color: "#1b5d56" },
+  { name: "National AIDS Control Organisation", short: "NACO", color: "#1f5b8a", logo: "/logos/naco.png" },
+ 
+  { name: "Surat Municipal Corporation", short: "SMC", color: "#7a3b14", logo: "/logos/smc.png" },
+  { name: "Dept. of Women & Child Development, Gujarat", short: "WCD Gujarat", color: "#8a2858", logo: "/logos/wcd.png" },
+  { name: "Gujarat State AIDS Control Society", short: "GSACS", color: "#0f6f3e", logo: "/logos/gsacs.png" },
+  { name: "ICMR-NITVAR, Pune", short: "ICMR-NITVAR", color: "#1c3a5e", logo: "/logos/icmr.png" },
+  { name: "New Civil Hospital, Surat", short: "Civil Hospital", color: "#1b5d56", logo: "/logos/nchs.png" },
+  { name: "South Gujarat Productivity Council", short: "SGPC", color: "#1b5d56", logo: "/logos/sgpc.png" },
+  { name: "Akshay Patra Foundation", short: "Akshay Patra", color: "#a14a17", logo: "/logos/ap.png" },
+  { name: "Gujarat State Network of People living with HIV", short: "GSNP", color: "#a14a17", logo: "/logos/GSNP.png" },
+  { name: "Don Bosco Foundation Baroda", short: "Don Bosco", color: "#4f3b0a", logo: "/logos/dbb.png" },
+  { name: "Labour and Employment Department of GoG", short: "Surat Labour department", color: "#4f3b0a", logo: "/logos/nclp.png" },
+   { name: "Southern Gujarat Chamber Of Commerce And Industry", short: "SGCCI", color: "#4f3b0a", logo: "/logos/sgcci.png" },
+    { name: "Asha Niketan foundation", short: "Asha Niketan", color: "#1b5d56", logo: "/logos/an.png" },
 ];
 
 export const FUNDING_FLOW = {
@@ -496,11 +508,8 @@ export const FUNDING_FLOW = {
   ],
 };
 
-export const QR_CODE_URL =
-  "https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=8&color=336d2a&bgcolor=ffffff&data=" +
-  encodeURIComponent(
-    "upi://pay?pa=shra7698327@barodampay&pn=Shramjivi%20Mahila%20Kalyan%20Trust&cu=INR"
-  );
+export const QR_CODE_URL = "/SMKT_QR.png";
+  
 
 export const GALLERY = [
   "https://images.pexels.com/photos/37495850/pexels-photo-37495850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
@@ -539,8 +548,7 @@ export const NAV_SECTIONS = [
       { hash: "milestones", title: "Milestones", desc: "Timeline since 1940" },
       { hash: "ecosystem-legacy", title: "Ecosystem Legacy", desc: "Trusts, unions, cooperatives" },
       { hash: "ecosystem-current", title: "Current Ecosystem", desc: "Active organisations" },
-      { hash: "future", title: "Future Initiatives", desc: "Where we are going next" },
-      { hash: "field", title: "From the Field", desc: "Photo gallery" },
+    
     ],
   },
   {
@@ -551,6 +559,7 @@ export const NAV_SECTIONS = [
       { hash: "women", title: "Women Empowerment", desc: "Counseling & legal aid" },
       { hash: "livelihood", title: "Livelihood Skills", desc: "Sewing program" },
       { hash: "legacy", title: "Legacy Programs", desc: "Past initiatives" },
+        { hash: "future", title: "Future Initiatives", desc: "Where we are going next" },
     ],
   },
   {
@@ -572,42 +581,60 @@ export const NAV_SECTIONS = [
   {
     label: "Contact",
     to: "/contact",
-    sections: [
-      { hash: "form", title: "Send Message", desc: "Get in touch" },
-      { hash: "office", title: "Visit us", desc: "Shramjivi Sevalaya" },
-      { hash: "hours", title: "Visiting Hours", desc: "When we are open" },
-    ],
+ 
   },
 ];
 
 // Three B&W historical photo slots for the About page Ecosystem Legacy section
 export const HISTORICAL_PHOTOS = [
   {
-    caption: "Founding decades \u2014 trade union movement, 1940s\u20131950s",
+    caption: "Street Children Outreach, early 2000s",
     image:
-      "https://images.unsplash.com/photo-1582408921715-18e7806365c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwyfHxoaXN0b3JpY2FsJTIwSW5kaWFufGVufDB8fHx8MTc4MTA4MTIzM3ww&ixlib=rb-4.1.0&q=85",
+      "/archive4.jpg",
   },
   {
-    caption: "Cooperative societies & welfare programmes, 1980s\u20131990s",
+    caption: "Targeted HIV prevention, focused on migrant workers",
     image:
-      "https://images.pexels.com/photos/15119089/pexels-photo-15119089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/archive3.jpg",
   },
   {
-    caption: "Community outreach & women\u2019s empowerment, early 2000s",
+    caption: "Rehabilitation through partner shelter homes & schools",
     image:
-      "https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwzfHx3b21lbiUyMGVtcG93ZXJtZW50fGVufDB8fHx8MTc4MTAyMjk0OHww&ixlib=rb-4.1.0&q=85",
+      "/archive2.jpg",
   },
 ];
 
 // Detailed future scope (expanded version of FUTURE_SCOPE)
 export const FUTURE_SCOPE_DETAILED = [
+   {
+    title: "Two New FSW TI Projects",
+    tagline: "Expanding HIV prevention under NACP",
+    horizon: "2026\u201327 \u00b7 upon NACP approval",
+    durationLine: "Targeted Interventions for Female Sex Workers",
+    image:
+      "/fsw.jpg",
+    body:
+      "Two new Targeted Intervention projects focused on Female Sex Workers (FSW), coordinated from Shramjivi Sevalaya \u2014 scaling our HIV prevention footprint across South Gujarat with peer-educator-led outreach.",
+    curriculum: [
+      "Mapping & enumeration of HRG population",
+      "Peer educator recruitment & training",
+      "STI clinical services & free treatment",
+      "HIV testing, counselling & ART linkage",
+      "Crisis support, legal aid & advocacy",
+    ],
+    impact: [
+      { value: "2", label: "New TI projects" },
+      { value: "2,000+", label: "FSWs to be reached" },
+      { value: "NACP-V", label: "Aligned framework" },
+    ],
+  },
   {
     title: "Digital Saheli",
     tagline: "Bridging the digital divide for women",
     horizon: "Pilot 2026 \u00b7 Scale 2027",
     durationLine: "3-month community learning program",
     image:
-      "https://images.unsplash.com/photo-1643199187247-b3b6009bf0bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxjb21wdXRlciUyMHRyYWluaW5nJTIwY2xhc3N8ZW58MHx8fHwxNzgxMDgxMjMzfDA&ixlib=rb-4.1.0&q=85",
+      "/ds.jpg",
     body:
       "A 3-month community learning programme training women in smartphone use, UPI, government portals and online safety \u2014 so each trained woman can become a peer resource in her neighbourhood.",
     curriculum: [
@@ -631,7 +658,7 @@ export const FUTURE_SCOPE_DETAILED = [
     image:
       "https://images.pexels.com/photos/20556421/pexels-photo-20556421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     body:
-      "A safe, supervised environment for children of labour-class working parents \u2014 within Shramjivi Sevalaya \u2014 protecting against abuse, neglect and child labour while enabling dignified livelihoods for parents.",
+      "A safe, supervised environment for children of labour-class working parents \u2014 within Shramjivi Sevalaya \u2014 protecting against abuse, neglect and child labour while enabling dignified livelihoods for parents - speacially for women.",
     curriculum: [
       "Supervised daycare with trained caregivers",
       "Pre-primary learning & creative play",
@@ -645,28 +672,7 @@ export const FUTURE_SCOPE_DETAILED = [
       { value: "Onsite", label: "at Shramjivi Sevalaya" },
     ],
   },
-  {
-    title: "Two New FSW TI Projects",
-    tagline: "Expanding HIV prevention under NACP",
-    horizon: "2026\u201327 \u00b7 upon NACP approval",
-    durationLine: "Targeted Interventions for Female Sex Workers",
-    image:
-      "https://images.unsplash.com/photo-1648964388258-e71b58683ed0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxJbmRpYSUyMGhlYWx0aGNhcmV8ZW58MHx8fHwxNzgxMDIyOTM4fDA&ixlib=rb-4.1.0&q=85",
-    body:
-      "Two new Targeted Intervention projects focused on Female Sex Workers (FSW), coordinated from Shramjivi Sevalaya \u2014 scaling our HIV prevention footprint across South Gujarat with peer-educator-led outreach.",
-    curriculum: [
-      "Mapping & enumeration of HRG population",
-      "Peer educator recruitment & training",
-      "STI clinical services & free treatment",
-      "HIV testing, counselling & ART linkage",
-      "Crisis support, legal aid & advocacy",
-    ],
-    impact: [
-      { value: "2", label: "New TI projects" },
-      { value: "2,000+", label: "FSWs to be reached" },
-      { value: "NACP-V", label: "Aligned framework" },
-    ],
-  },
+ 
 ];
 
 
@@ -678,7 +684,7 @@ AWARDS.push(
     body:
       "Acknowledged as a local venue and community support partner for the ICMR-NITVAR IBBS-HRG project in Surat.",
     image:
-      "https://images.unsplash.com/photo-1773212902273-278c261a4c98?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHw0fHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+      "/award4.jpeg",
   },
   {
     title: "Child Labour Rehabilitation",
@@ -686,7 +692,7 @@ AWARDS.push(
     body:
       "Honoured by Surat Labour Department for successful implementation of the National Child Labour Program across seven schools.",
     image:
-      "https://images.unsplash.com/photo-1764874299025-d8b2251f307d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+      "award5.jpeg",
   },
   {
     title: "Decades of Service Felicitation",
@@ -694,7 +700,7 @@ AWARDS.push(
     body:
       "Recognised for 80 years of uninterrupted service across labour rights, women empowerment and community welfare in South Gujarat.",
     image:
-      "https://images.unsplash.com/photo-1764408721535-2dcb912db83e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHxJbmRpYW4lMjBhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc4MTA4MTIyNnww&ixlib=rb-4.1.0&q=85",
+      "award6.jpg",
   }
 );
 
@@ -760,29 +766,7 @@ export const ECOSYSTEM_LEGACY = {
 
 // Expanded Legacy Programs with full report content
 export const LEGACY_PROGRAMS_FULL = [
-  {
-    title: "Computer Training Program",
-    period: "2008 \u2014 2018",
-    underTrust: "Institute for Information Technology Trust",
-    overview:
-      "Shramjivi previously implemented a Computer Training Program aimed at improving digital literacy and employability among youth and community members. Conducted from 2008 to 2018, the program offered short-term courses of 2 to 3 months at highly subsidized fees, ensuring accessibility for individuals from diverse socio-economic backgrounds.",
-    curriculum: [
-      "Windows fundamentals",
-      "Microsoft Word, Excel, PowerPoint",
-      "Tally Accounting",
-      "CorelDRAW & PageMaker",
-      "Photoshop & DTP",
-    ],
-    impact: [
-      { value: "512", label: "students trained" },
-      { value: "10 yrs", label: "of operation" },
-      { value: "Women-focused", label: "primary beneficiaries" },
-    ],
-    pullquote:
-      "A total of 512 students were trained across various courses, with a strong focus on empowering women through digital skill development.",
-    image:
-      "https://images.unsplash.com/photo-1643199187247-b3b6009bf0bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxjb21wdXRlciUyMHRyYWluaW5nJTIwY2xhc3N8ZW58MHx8fHwxNzgxMDgxMjMzfDA&ixlib=rb-4.1.0&q=85",
-  },
+ 
   {
     title: "National Child Labour Program",
     period: "2006\u20132009 & 2017\u20132021",
@@ -806,7 +790,7 @@ export const LEGACY_PROGRAMS_FULL = [
     pullquote:
       "A significant milestone in Shramjivi\u2019s journey, reflecting long-standing commitment to education, rehabilitation, and the empowerment of vulnerable children.",
     image:
-      "https://images.pexels.com/photos/20556421/pexels-photo-20556421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/nclp.png",
   },
   {
     title: "Street Children Outreach & HIV Awareness",
@@ -829,6 +813,29 @@ export const LEGACY_PROGRAMS_FULL = [
     pullquote:
       "Reaching street-connected children with awareness, counseling and basic healthcare support \u2014 part of Shramjivi\u2019s commitment to vulnerable children at the grassroots.",
     image:
-      "https://images.pexels.com/photos/15119089/pexels-photo-15119089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "/sco.png",
+  },
+   {
+    title: "Computer Training Program",
+    period: "2008 \u2014 2018",
+    underTrust: "Institute for Information Technology Trust",
+    overview:
+      "Shramjivi previously implemented a Computer Training Program aimed at improving digital literacy and employability among youth and community members. Conducted from 2008 to 2018, the program offered short-term courses of 2 to 3 months at highly subsidized fees, ensuring accessibility for individuals from diverse socio-economic backgrounds.",
+    curriculum: [
+      "Windows fundamentals",
+      "Microsoft Word, Excel, PowerPoint",
+      "Tally Accounting",
+      "CorelDRAW & PageMaker",
+      "Photoshop & DTP",
+    ],
+    impact: [
+      { value: "512", label: "students trained" },
+      { value: "10 yrs", label: "of operation" },
+      { value: "Women-focused", label: "primary beneficiaries" },
+    ],
+    pullquote:
+      "A total of 512 students were trained across various courses, with a strong focus on empowering women through digital skill development.",
+    image:
+      "/cc.jpg",
   },
 ];

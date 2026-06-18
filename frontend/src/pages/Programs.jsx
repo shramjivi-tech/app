@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { ArrowUpRight, CheckCircle2, HeartPulse, Users, Scissors, BookOpen, Quote } from "lucide-react";
+//import { ArrowUpRight, CheckCircle2, HeartPulse, Users, Scissors, BookOpen, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import Counter from "../components/Counter";
-import { FOCUS_AREAS, HEALTH_IMPACT, WOMEN_IMPACT, LIVELIHOOD_IMPACT, LEGACY_PROGRAMS_FULL } from "../data/mock";
+//import { FOCUS_AREAS, HEALTH_IMPACT, WOMEN_IMPACT, LIVELIHOOD_IMPACT, LEGACY_PROGRAMS_FULL } from "../data/mock";
+import { FOCUS_AREAS, HEALTH_IMPACT, WOMEN_IMPACT, LIVELIHOOD_IMPACT, LEGACY_PROGRAMS_FULL, FUTURE_SCOPE_DETAILED } from "../data/mock";
+import { ArrowUpRight, CheckCircle2, HeartPulse, Users, Scissors, BookOpen, Quote, Compass } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ICONS = { HeartPulse, Users, Scissors };
 
@@ -109,19 +112,42 @@ export default function Programs() {
               transition={{ duration: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
               className="mt-12 grid lg:grid-cols-12 gap-8"
             >
-              <div className="lg:col-span-7">
-                <div className="rounded-3xl overflow-hidden ring-1 ring-[#e7e1d4]">
-                  <motion.img
-                    key={current.image}
-                    src={current.image}
-                    alt={current.title}
-                    className="w-full h-[380px] md:h-[460px] object-cover"
-                    initial={{ scale: 1.08 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 1.2, ease: [0.2, 0.7, 0.2, 1] }}
-                  />
-                </div>
-              </div>
+             <div className="lg:col-span-7">
+  <div className="flex flex-col gap-3">
+    {/* Big image */}
+    <motion.div
+      className="rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4]"
+      initial={{ scale: 1.08, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1.2, ease: [0.2, 0.7, 0.2, 1] }}
+    >
+      <img
+        src={current.image}
+        alt={current.title}
+        className="w-full h-[280px] md:h-[340px] object-cover"
+      />
+    </motion.div>
+
+    {/* 2 small images */}
+    <div className="grid grid-cols-2 gap-3">
+      {[current.image2 || current.image, current.image3 || current.image].map((img, i) => (
+        <motion.div
+          key={i}
+          className="rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4]"
+          initial={{ scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.1 + i * 0.1, ease: [0.2, 0.7, 0.2, 1] }}
+        >
+          <img
+            src={img}
+            alt={current.title}
+            className="w-full h-[140px] md:h-[160px] object-cover"
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</div>
               <div className="lg:col-span-5">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-11 h-11 rounded-full bg-[#336d2a] text-[#faf6ef] flex items-center justify-center">
@@ -213,6 +239,74 @@ export default function Programs() {
           </div>
         </div>
       </section>
+
+
+      {/* Future Scope */}
+<section id="future" className="py-20 md:py-28 bg-[#faf6ef] scroll-mt-24">
+  <div className="max-w-7xl mx-auto px-5 md:px-8">
+    <Reveal className="max-w-3xl mb-14">
+      <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3 inline-flex items-center gap-2">
+        <Compass className="w-3.5 h-3.5" /> The Shramjivi Ecosystem — Future
+      </div>
+      <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
+        From legacy and current work, into what comes next.
+      </h2>
+      <p className="mt-5 text-[#3d4441] leading-relaxed text-[16px] md:text-[17px]">
+        The next chapter of Shramjivi's story builds on the same model that has
+        worked for decades — existing infrastructure, peer leadership, and
+        partnerships with government systems — expanding into digital inclusion,
+        child safety, and new HIV-prevention frontiers.
+      </p>
+    </Reveal>
+
+    <div className="space-y-10">
+      {FUTURE_SCOPE_DETAILED.map((p, idx) => (
+        <Reveal key={p.title}>
+          <article className="bg-white rounded-3xl overflow-hidden ring-1 ring-[#e7e1d4] grid md:grid-cols-12 gap-0">
+            <div className={`relative md:col-span-5 ${idx % 2 === 1 ? "md:order-2" : ""}`}>
+              <div className="relative h-56 md:h-full min-h-[300px] overflow-hidden">
+                <img src={p.image} alt={p.title} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/55 via-transparent to-transparent" />
+                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#ea8a2e] text-white text-[11px] font-medium tracking-wide">
+                  {p.horizon}
+                </div>
+              </div>
+            </div>
+            <div className={`md:col-span-7 p-7 md:p-9 ${idx % 2 === 1 ? "md:order-1" : ""}`}>
+              <div className="text-[11px] uppercase tracking-[0.22em] text-[#6e4a0a]">
+                Initiative {idx + 1} · {p.durationLine}
+              </div>
+              <h3 className="font-serif-display text-2xl md:text-[30px] text-[#1a3812] mt-2 leading-tight">
+                {p.title}
+              </h3>
+              <div className="mt-1 text-[14px] text-[#336d2a] font-medium">{p.tagline}</div>
+              <p className="mt-4 text-[14.5px] text-[#3d4441] leading-relaxed">{p.body}</p>
+              <div className="mt-5 grid grid-cols-3 gap-3 bg-[#faf6ef] rounded-2xl p-4 border border-[#f0e8d3]">
+                {p.impact.map((it) => (
+                  <div key={it.label}>
+                    <div className="font-serif-display text-xl md:text-[22px] text-[#336d2a] leading-tight">
+                      <Counter value={it.value} />
+                    </div>
+                    <div className="text-[10px] text-[#6d6357] mt-1 leading-snug">{it.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
+        </Reveal>
+      ))}
+    </div>
+
+    <Reveal className="mt-14 text-center">
+      <Link
+        to="/get-involved"
+        className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#336d2a] text-[#faf6ef] font-medium hover:bg-[#244e1d] transition-colors duration-300"
+      >
+        Help unlock the next chapter <ArrowUpRight className="w-4 h-4" />
+      </Link>
+    </Reveal>
+  </div>
+</section>
     </div>
   );
 }

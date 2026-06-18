@@ -43,15 +43,20 @@ function PartnerCard({ partner }) {
   return (
     <div className="group flex items-center gap-4 bg-white rounded-2xl px-5 py-4 ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/40 hover:-translate-y-0.5 transition-all duration-300 min-w-[300px] cursor-default">
       <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center font-serif-display text-white text-base shadow-sm shrink-0"
-        style={{ backgroundColor: partner.color }}
-        aria-hidden
+        className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 overflow-hidden"
+        style={{ backgroundColor: partner.logo ? "#f3ecdc" : partner.color }}
       >
-        {partner.short
-          .split(" ")
-          .map((w) => w[0])
-          .slice(0, 2)
-          .join("")}
+        {partner.logo ? (
+          <img
+            src={partner.logo}
+            alt={partner.short}
+            className="w-full h-full object-contain p-1"
+          />
+        ) : (
+          <span className="font-serif-display text-white text-base">
+            {partner.short.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+          </span>
+        )}
       </div>
       <div className="min-w-0">
         <div className="text-[13px] font-semibold text-[#1a3812] leading-tight whitespace-nowrap">

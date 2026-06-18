@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
 import Counter from "../components/Counter";
 import TestimonialCarousel from "../components/TestimonialCarousel";
+import { useEffect, useRef, useState } from "react";
 import PartnersCarousel from "../components/PartnersCarousel";
 import {
   HERO_STATS,
@@ -29,12 +30,50 @@ import {
 
 const ICONS = { HeartPulse, Users, Scissors };
 
+
+function TypewriterText() {
+  const [displayed, setDisplayed] = useState("");
+  const [started, setStarted] = useState(false);
+  const full = "Millions of Lives";
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setStarted(true); },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    if (displayed.length >= full.length) return;
+    const timeout = setTimeout(() => {
+      setDisplayed(full.slice(0, displayed.length + 1));
+    }, 80);
+    return () => clearTimeout(timeout);
+  }, [started, displayed]);
+
+  return (
+    <h2
+      ref={ref}
+      className="font-serif-display text-6xl md:text-8xl lg:text-[100px] text-[#ea8a2e] leading-[1.0] min-h-[1.2em]"
+    >
+      {displayed}
+      <span className="animate-pulse text-[#ea8a2e]">|</span>
+    </h2>
+  );
+}
+
 export default function Home() {
   return (
     <div>
       {/* HERO — cream background, left text, women PNG anchored at bottom full-width */}
       <section className="relative overflow-hidden bg-[#faf6ef]">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-[44vh] md:pb-[46vh] relative z-10">
+       <div className="max-w-7xl mx-auto px-5 md:px-8 pt-2 md:pt-4 pb-[44vh] md:pb-[46vh] relative z-10">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-8">
           <motion.div
             initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -51,15 +90,13 @@ export default function Home() {
               Annual Report 2025&ndash;26 &mdash; Out now
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
-            <h1 className="font-serif-display text-5xl md:text-7xl lg:text-[80px] leading-[1.02] mt-6 text-[#1a3812]">
+            <h1 className="font-serif-display text-5xl md:text-7xl lg:text-[80px] leading-[1.02] mt-6 text-[#1a3812]">             
               Community change begins with{" "}
               <span className="deco-underline italic">dignity</span>,
               opportunity and <span className="italic">trust</span>.
             </h1>
-            <p className="mt-7 text-[17px] md:text-lg text-[#3d4441] max-w-2xl leading-relaxed">
-              Serving Surat&rsquo;s women, workers and vulnerable communities without
-              interruption since {SITE.estd} &mdash; through independence, partition,
-              floods and a pandemic.
+            <p className="mt-7 text-[17px] md:text-lg text-[#3d4441] max-w-2xl leading-relaxed">     
+              The <i>Shramjivi</i>(one who earns a living through labor) roots trace back to worker movements and community organizing efforts that began in the {SITE.estd} &mdash;. While the Trusts were formally established later, it builds upon decades of collective action, advocacy, and service to workers, women, and vulnerable communities.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
@@ -76,7 +113,23 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+          </div>
+
+        <div className="lg:col-span-4 flex justify-center">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full max-w-md"
+          >
+            <source src="/hero-video.webm" type="video/webm" />
+          </video>
         </div>
+
+        </div>
+        </div>
+      
 
         {/* Women illustration band — full width from left edge to right edge */}
         <div className="absolute inset-x-0 bottom-0 h-[42vh] md:h-[44vh] pointer-events-none z-0">
@@ -94,6 +147,46 @@ export default function Home() {
           <div className="absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-[#faf6ef] via-[#faf6ef]/80 to-transparent" />
         </div>
       </section>
+       {/* Impact Statement */}
+{/* Impact Statement */}
+<section className="bg-[#336d2a] py-16 md:py-20">
+  <div className="max-w-7xl mx-auto px-5 md:px-8">
+    <Reveal>
+      <div className="max-w-4xl">
+         <motion.p
+          className="mt-6 text-[#faf6ef]/80 text-base md:text-lg leading-relaxed max-w-none"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, delay: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
+        >
+          Shramjivi ecosystem — including unions, community networks, counseling services, public health programs, livelihood initiatives, and partnerships — has evolved over generations. Through this cumulative and intergenerational reach, we believe our work may have touched and influenced
+          
+        </motion.p>
+        
+        <TypewriterText />
+        
+        <motion.p
+          className="mt-6 text-[#faf6ef]/80 text-xl md:text-2xl leading-relaxed max-w-2xl font-medium"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, delay: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
+        >
+          Systematic impact recording began in 2025–26.
+          
+        </motion.p>
+        <motion.div
+          className="mt-8 w-20 h-1 bg-[#ea8a2e] rounded-full"
+          initial={{ width: 0 }}
+          whileInView={{ width: 80 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+        />
+      </div>
+    </Reveal>
+  </div>
+</section>
 
       {/* Stats */}
       <section className="py-12 md:py-16 bg-[#faf6ef]">
@@ -113,6 +206,8 @@ export default function Home() {
           </Stagger>
         </div>
       </section>
+
+     
 
       {/* Welcome Message — 2 col (picture left, text right), tighter */}
       <section id="welcome" className="py-16 md:py-20 bg-[#f3ecdc] scroll-mt-24">
@@ -134,8 +229,7 @@ export default function Home() {
 
             <Reveal className="lg:col-span-7">
               <h2 className="font-serif-display text-3xl md:text-4xl text-[#1a3812] leading-[1.1]">
-                From sustained service to <span className="italic">scalable impact</span>.
-              </h2>
+                Message From The trustees</h2>
               <Stagger
                 className="mt-6 space-y-4 text-[15px] md:text-[15.5px] text-[#2d3431] leading-[1.75]"
                 staggerChildren={0.08}
@@ -174,6 +268,7 @@ export default function Home() {
               To empower women, children and vulnerable communities through access to
               counseling, health services, and livelihood opportunities &mdash; while promoting
               dignity, equity and sustainable social development.
+              
             </p>
           </Reveal>
         </div>
@@ -186,7 +281,8 @@ export default function Home() {
             <Reveal className="max-w-2xl">
               <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-3">Our Focus</div>
               <h2 className="font-serif-display text-4xl md:text-5xl text-[#1a3812] leading-[1.05]">
-                Three pillars. One integrated community development approach.
+                
+                Shramjivi follows Integrated Community Development Approach
               </h2>
             </Reveal>
             <Link

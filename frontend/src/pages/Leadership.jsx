@@ -36,17 +36,19 @@ export default function Leadership() {
             <Reveal>
               <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-5">Trustees</div>
             </Reveal>
-            <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerChildren={0.1}>
+            <Stagger className="grid sm:grid-cols-4 lg:grid-cols-5 gap-4" staggerChildren={0.1}>
               {LEADERSHIP.map((l) => (
                 <StaggerItem key={l.name}>
                   <div className="group bg-white rounded-3xl overflow-hidden ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/40 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                    <ImageSlot
-                      src={l.image}
-                      alt={l.name}
-                      aspect="1/1"
-                      rounded="rounded-none"
-                      label="Portrait coming soon"
-                    />
+                  <div className="w-[70%] mx-auto pt-4">
+  <ImageSlot
+    src={l.image}
+    alt={l.name}
+    aspect="1/1"
+    rounded="rounded-full"
+    label="Portrait coming soon"
+  />
+</div>
                     <div className="p-5">
                       <div className="font-serif-display text-xl text-[#1a3812]">{l.name}</div>
                       <div className="text-sm text-[#6d6357] mt-1">{l.role}</div>
@@ -81,38 +83,28 @@ export default function Leadership() {
                   </div>
                 </Reveal>
                 <Stagger
-                  className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
+                 className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"
                   staggerChildren={0.04}
                 >
                   {group.members.map((m) => (
                     <StaggerItem key={m.name}>
-                      <div className="group bg-white rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                        <div className="relative aspect-square overflow-hidden">
-                          <div
-                            className="absolute inset-0 bg-[#f5ecd9]"
-                            style={{
-                              backgroundImage:
-                                "repeating-linear-gradient(45deg, rgba(51,109,42,0.05) 0 8px, transparent 8px 16px)",
-                            }}
-                          />
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="relative">
-                              <div className="w-16 h-16 rounded-full bg-white/85 border border-[#ea8a2e]/30 flex items-center justify-center shadow-sm">
-                                <UserRound className="w-6 h-6 text-[#ea8a2e]" />
-                              </div>
-                              <div className="absolute -bottom-1 -right-1 px-2 py-0.5 rounded-full bg-[#336d2a] text-white text-[10px] font-medium">
-                                <Initials name={m.name} />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="p-3.5">
-                          <div className="text-[13px] font-semibold text-[#1a3812] leading-tight truncate">
-                            {m.name}
-                          </div>
-                          <div className="text-[11px] text-[#6d6357] mt-1 truncate">{m.role}</div>
-                        </div>
-                      </div>
+                     <div className="group bg-white rounded-2xl overflow-hidden ring-1 ring-[#e7e1d4] hover:ring-[#336d2a]/30 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+ <div className="w-[90%] mx-auto pt-3">
+  <ImageSlot
+    src={m.image}
+    alt={m.name}
+    aspect="1/1"
+    rounded="rounded-full"
+    label="Portrait coming soon"
+  />
+</div>
+  <div className="p-3.5">
+    <div className="text-[13px] font-semibold text-[#1a3812] leading-tight truncate">
+      {m.name}
+    </div>
+    <div className="text-[11px] text-[#6d6357] mt-1 truncate">{m.role}</div>
+  </div>
+</div>
                     </StaggerItem>
                   ))}
                 </Stagger>

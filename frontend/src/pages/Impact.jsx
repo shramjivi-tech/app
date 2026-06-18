@@ -1,5 +1,6 @@
 import { Quote, TrendingUp, Users, HeartPulse, Scissors, Award } from "lucide-react";
 import Reveal, { Stagger, StaggerItem } from "../components/Reveal";
+import CoverageMap from "../components/CoverageMap";
 import Counter from "../components/Counter";
 import {
   HEALTH_IMPACT,
@@ -27,26 +28,25 @@ export default function Impact() {
             <h1 className="font-serif-display text-5xl md:text-6xl lg:text-7xl text-[#1a3812] leading-[1.04]">
               Numbers grounded in lives, trust and continuity.
             </h1>
+          
+          </div>
             <p className="mt-6 text-lg text-[#3d4441] leading-relaxed">
               Every metric on this page represents a person reached, a service delivered or a
-              moment of dignity restored.
+              moment of dignity restored during 2025-26. This year marks the beginning of a more structured impact measurement journey for Shramjivi. While our work has continued uninterrupted for decades, 2025–26 is the first year in which we have systematically documented and consolidated our impact data across programs.
             </p>
-          </div>
 
-          {/* Headline numbers */}
-          <Stagger className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4" staggerChildren={0.1}>
-            {HEADLINE_NUMBERS.map((n) => (
-              <StaggerItem key={n.label}>
-                <div className="bg-white rounded-2xl p-7 ring-1 ring-[#e7e1d4] hover:-translate-y-1 hover:ring-[#336d2a]/30 transition-all duration-300 h-full">
-                  <n.icon className="w-6 h-6 text-[#ea8a2e]" />
-                  <div className="font-serif-display text-5xl text-[#336d2a] mt-5">
-                    <Counter value={n.value} />
-                  </div>
-                  <div className="text-sm text-[#6d6357] mt-2 leading-snug">{n.label}</div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
+            {/* Picture strip */}
+<section className="relative overflow-hidden h-[40vh] md:h-[50vh]">
+  <img
+    src={GALLERY[0]}
+    alt="Shramjivi community"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#1a3812]/60 via-[#1a3812]/20 to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-b from-[#faf6ef]/80 via-transparent to-transparent" />
+</section>
+
+         
         </div>
       </section>
 
@@ -182,7 +182,8 @@ export default function Impact() {
             </p>
           </div>
           <div className="lg:col-span-7">
-            <div className="flex flex-wrap gap-2">
+          <CoverageMap />
+            <div className="flex flex-wrap gap-2 mt-6">
               {[
                 "Industrial Zones", "LH Road", "Sahara Darwaja", "Dumbhal", "Parvat",
                 "Kadodara", "Limbayat", "Godadara", "Pandesara", "Dindoli", "Udhana",
@@ -197,13 +198,7 @@ export default function Impact() {
                 </span>
               ))}
             </div>
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              {GALLERY.slice(0, 3).map((url, i) => (
-                <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden ring-1 ring-[#e7e1d4]">
-                  <img src={url} alt="Field" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
+           
           </div>
         </div>
       </section>

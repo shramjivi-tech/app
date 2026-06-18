@@ -74,7 +74,7 @@ export default function GetInvolved() {
           <div className="max-w-3xl">
             <div className="text-xs uppercase tracking-[0.22em] text-[#6e4a0a] mb-4">Get Involved</div>
             <h1 className="font-serif-display text-5xl md:text-6xl lg:text-7xl text-[#1a3812] leading-[1.04]">
-              Your ₹1 becomes <span className="italic deco-underline">₹6</span> of community change.
+              Your ₹1 becomes <span className="italic deco-underline">₹6</span> for community change.
             </h1>
             <p className="mt-6 text-lg text-[#3d4441] leading-relaxed">
               Through government convergence, existing infrastructure, volunteers, partnerships
