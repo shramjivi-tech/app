@@ -404,7 +404,7 @@ export const TESTIMONIALS = [
     name: "Subhash Patel",
     title: "Cluster Prevention Officer, DISHA DAPCU, Surat",
     image:
-      "/people/Subhash Patel.JPG",
+      "/people/subhash patel.JPG",
   },
   {
     quote:
