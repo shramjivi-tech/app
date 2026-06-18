@@ -465,7 +465,7 @@ export const PARTNERS = [
   { name: "New Civil Hospital, Surat", short: "Civil Hospital", color: "#1b5d56", logo: "/logos/nchs.png" },
   { name: "South Gujarat Productivity Council", short: "SGPC", color: "#1b5d56", logo: "/logos/sgpc.png" },
   { name: "Akshay Patra Foundation", short: "Akshay Patra", color: "#a14a17", logo: "/logos/ap.png" },
-  { name: "Gujarat State Network of People living with HIV", short: "GSNP", color: "#a14a17", logo: "/logos/GSNP.png" },
+  { name: "Gujarat State Network of People living with HIV", short: "GSNP", color: "#a14a17", logo: "/logos/gsnp.png" },
   { name: "Don Bosco Foundation Baroda", short: "Don Bosco", color: "#4f3b0a", logo: "/logos/dbb.png" },
   { name: "Labour and Employment Department of GoG", short: "Surat Labour department", color: "#4f3b0a", logo: "/logos/nclp.png" },
    { name: "Southern Gujarat Chamber Of Commerce And Industry", short: "SGCCI", color: "#4f3b0a", logo: "/logos/sgcci.png" },
