@@ -82,8 +82,8 @@ export const SITE = {
 export const HERO_STATS = [
   { value: "85+", label: "Years of Legacy" },
   { value: "58,000+", label: "impacted with Targeted Intervention programs in 2025\u201326" },
-  { value: "3,260+", label: "Women were provided counselings and legal guidance in 2025\u201326" },
-  { value: "61,310", label: "Lives impacted overall in 2025\u201326" },
+  { value: "4,198+", label: "Women were provided services like counselings, legal guidance and Financial inclusion in 2025\u201326" },
+  { value: "62,199", label: "Lives impacted overall in 2025\u201326" },
 ];
 
 export const FOCUS_AREAS = [
@@ -176,7 +176,11 @@ export const WOMEN_IMPACT = [
   { label: "Counseling Cases Handled", value: "720+" },
   { label: "Beneficiaries via Field Visits", value: "2,210+" },
   { label: "Other Support Services", value: "330+" },
-  { label: "Total Women Reached (2025\u201326)", value: "3,260+" },
+  { label: "Total Running Savings Accounts of Daily wagers", value: "939" },
+  { label: "Registered legal cases were resolved through counseling", value: "91%" },
+  { label: "Total Legal Case Requests registered", value: "32" },
+  { label: "Total Legal case Conflict Resolution by our centers ", value: "29" },
+  { label: "Total Women Beneficiaries during (2025\u201326)", value: "4,198+" },
 ];
 
 export const LIVELIHOOD_IMPACT = [
@@ -464,6 +468,7 @@ export const PARTNERS = [
   { name: "ICMR-NITVAR, Pune", short: "ICMR-NITVAR", color: "#1c3a5e", logo: "/logos/icmr.png" },
   { name: "New Civil Hospital, Surat", short: "Civil Hospital", color: "#1b5d56", logo: "/logos/nchs.png" },
   { name: "South Gujarat Productivity Council", short: "SGPC", color: "#1b5d56", logo: "/logos/sgpc.png" },
+  { name: "Tata Institute of Social Sciences", short: "Prayas – A field action project", color: "#a14a17", logo: "/logos/tiss.png" },
   { name: "Akshay Patra Foundation", short: "Akshay Patra", color: "#a14a17", logo: "/logos/ap.png" },
   { name: "Gujarat State Network of People living with HIV", short: "GSNP", color: "#a14a17", logo: "/logos/gsnp.png" },
   { name: "Don Bosco Foundation Baroda", short: "Don Bosco", color: "#4f3b0a", logo: "/logos/dbb.png" },
