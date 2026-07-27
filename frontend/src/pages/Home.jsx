@@ -71,7 +71,7 @@ export default function Home() {
     <div>
       {/* HERO — cream background, left text, women PNG anchored at bottom full-width */}
       <section className="relative overflow-hidden bg-[#faf6ef]">
-       <div className="max-w-7xl mx-auto px-5 md:px-8 pt-2 md:pt-4 pb-[44vh] md:pb-[46vh] relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-2 md:pt-4 pb-[15vh] md:pb-[46vh] relative z-10">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8">
           <motion.div
@@ -132,7 +132,7 @@ export default function Home() {
       
 
         {/* Women illustration band — full width from left edge to right edge */}
-        <div className="absolute inset-x-0 bottom-0 h-[42vh] md:h-[44vh] pointer-events-none z-0">
+        <div className="absolute inset-x-0 bottom-0 h-[12vh] md:h-[44vh] pointer-events-none z-0">
           <motion.img
             src={HERO_ILLUSTRATION}
             alt=""
