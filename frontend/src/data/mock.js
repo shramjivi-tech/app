@@ -639,7 +639,7 @@ export const FUTURE_SCOPE_DETAILED = [
     horizon: "Pilot 2026 \u00b7 Scale 2027",
     durationLine: "3-month community learning program",
     image:
-      "/ds.jpg",
+      "/ds.jpeg",
     body:
       "A 3-month community learning programme training women in smartphone use, UPI, government portals and online safety \u2014 so each trained woman can become a peer resource in her neighbourhood.",
     curriculum: [
