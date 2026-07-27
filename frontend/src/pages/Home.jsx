@@ -115,7 +115,7 @@ export default function Home() {
           </motion.div>
           </div>
 
-        <div className="hidden lg:flex lg:col-span-4 justify-center items-center">
+        <div className="flex lg:col-span-4 justify-center items-center">
   <video
     autoPlay
     loop

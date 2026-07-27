@@ -50,7 +50,8 @@ export default function MultiplierChart() {
 
         {/* Chart */}
         <div className="lg:col-span-7">
-          <div className="relative h-[260px] md:h-[420px]">
+        <div className="overflow-x-auto -mx-7 px-7 md:overflow-visible md:mx-0 md:px-0">
+        <div className="relative h-[260px] md:h-[420px] min-w-[380px] md:min-w-0">
             {/* Y-axis grid lines */}
             <div className="absolute inset-0 flex flex-col-reverse justify-between pointer-events-none">
               {Array.from({ length: MAX + 1 }).map((_, i) => (
@@ -112,9 +113,10 @@ export default function MultiplierChart() {
               })}
             </div>
           </div>
+          </div>
 
           {/* Labels under bars */}
-          <div className="mt-3 pl-10 flex items-start justify-between gap-2 md:gap-3">
+          <div className="mt-3 pl-6 md:pl-10 flex items-start justify-between gap-1 md:gap-3 min-w-[380px] md:min-w-0">
             {LAYERS.map((l, idx) => (
               <motion.div
                 key={l.label}
