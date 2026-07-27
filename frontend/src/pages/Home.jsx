@@ -115,17 +115,17 @@ export default function Home() {
           </motion.div>
           </div>
 
-        <div className="lg:col-span-4 flex justify-center">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full max-w-md"
-          >
-            <source src="/hero-video.webm" type="video/webm" />
-          </video>
-        </div>
+        <div className="hidden lg:flex lg:col-span-4 justify-center items-center">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full max-w-md"
+  >
+    <source src="/hero-video.webm" type="video/webm" />
+  </video>
+</div>
 
         </div>
         </div>

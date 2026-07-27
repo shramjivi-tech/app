@@ -27,7 +27,7 @@ export default function MultiplierChart() {
       <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#ea8a2e]/15 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#4a9b3d]/15 blur-3xl pointer-events-none" />
 
-      <div className="relative grid lg:grid-cols-12 gap-10 items-end">
+      <div className="relative grid lg:grid-cols-12 gap-10 items-end overflow-hidden">
         {/* Header */}
         <div className="lg:col-span-5">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ea8a2e]/20 text-[#f5b574] text-xs font-medium">
@@ -50,7 +50,7 @@ export default function MultiplierChart() {
 
         {/* Chart */}
         <div className="lg:col-span-7">
-          <div className="relative h-[360px] md:h-[420px]">
+          <div className="relative h-[260px] md:h-[420px]">
             {/* Y-axis grid lines */}
             <div className="absolute inset-0 flex flex-col-reverse justify-between pointer-events-none">
               {Array.from({ length: MAX + 1 }).map((_, i) => (
