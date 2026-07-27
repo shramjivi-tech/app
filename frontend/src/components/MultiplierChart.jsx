@@ -112,8 +112,8 @@ export default function MultiplierChart() {
                 );
               })}
             </div>
-          </div>
-          </div>
+            </div>
+        
 
           {/* Labels under bars */}
           <div className="mt-3 pl-6 md:pl-10 flex items-start justify-between gap-1 md:gap-3 min-w-[380px] md:min-w-0">
@@ -133,6 +133,7 @@ export default function MultiplierChart() {
                 </div>
               </motion.div>
             ))}
+            </div>
           </div>
         </div>
       </div>
