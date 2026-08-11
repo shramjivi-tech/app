@@ -106,7 +106,7 @@ export default function MultiplierChart() {
               </div>
 
               {/* Labels — inside scroll container */}
-              <div className="mt-2 pl-8 flex items-start justify-between gap-1">
+              <div className="mt-2 pl-6 pr-3 flex items-start justify-between gap-[2px] md:gap-3">
                 {LAYERS.map((l, idx) => (
                   <motion.div
                     key={l.label}
