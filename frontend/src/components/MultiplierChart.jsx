@@ -69,7 +69,7 @@ export default function MultiplierChart() {
                 </div>
 
                 {/* Bars */}
-                <div className="absolute inset-0 pl-8 flex items-end justify-between gap-1 md:gap-3">
+                <div className="absolute inset-0 pl-8 pr-2 flex items-end justify-between gap-1 md:gap-3">
                   {LAYERS.map((l, idx) => {
                     const height = (l.value / MAX) * 100;
                     return (
