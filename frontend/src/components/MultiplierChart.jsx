@@ -52,7 +52,7 @@ export default function MultiplierChart() {
 
           {/* Scrollable only on mobile */}
           <div className="overflow-x-auto md:overflow-visible">
-            <div style={{ minWidth: "340px" }}>
+            <div style={{ minWidth: "300px" }}>
 
               {/* Bars */}
               <div className="relative h-[220px] md:h-[420px]">
@@ -69,7 +69,7 @@ export default function MultiplierChart() {
                 </div>
 
                 {/* Bars */}
-                <div className="absolute inset-0 pl-8 pr-2 flex items-end justify-between gap-1 md:gap-3">
+                <div className="absolute inset-0 pl-6 pr-3 flex items-end justify-between gap-[2px] md:gap-3">
                   {LAYERS.map((l, idx) => {
                     const height = (l.value / MAX) * 100;
                     return (
